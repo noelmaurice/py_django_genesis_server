@@ -44,7 +44,7 @@ class VariantDataTestClass(ParentTest):
 
     def test_find_distinct_filters(self):
         """
-        The request for find filters for a sample is checked
+        The request for finding filters for a sample is checked
         """
         filters = VariantRepository.find_distinct_filters('splTOTO',
                                                           collect=ParentTest.get_test_collect())
@@ -53,7 +53,7 @@ class VariantDataTestClass(ParentTest):
 
     def test_find_variant_frequencies(self):
         """
-        The request for find sample with a some frequency is checked
+        The request for finding sample with a some frequency is checked
         """
 
         variants = VariantRepository.find_variants_frequency('splTOTO', 40.00,
@@ -64,7 +64,7 @@ class VariantDataTestClass(ParentTest):
 
     def test_find_node_contains_value(self):
         """
-        The request for find sample with some value for a specific node is checked
+        The request for finding sample with some value for a specific node is checked
         """
         variants = VariantRepository.find_variants_node_value('splTOTO',
                                                             'annot.changes.HGVSc', ['524G>A'],

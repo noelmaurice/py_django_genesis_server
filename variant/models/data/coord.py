@@ -16,7 +16,7 @@ class Coord(DataModel):
                  assembly: str,
                  pos: int,
                  ref: str,
-                 region: str) -> None:
+                 region: str):
         """
 
         :param alt: alt of the variant
@@ -32,9 +32,10 @@ class Coord(DataModel):
         self.region = region
 
     @classmethod
-    def create(cls, record: anacore.vcf.VCFRecord, assembly: str) -> DataModel:
+    def create(cls, record: anacore.vcf.VCFRecord, assembly: str):
         """
         Coord part is created for the variant
+
         :param record: Record containing the variant information and for one sample
         :param assembly: Assembly name
         :return: The coord object
@@ -51,7 +52,8 @@ class Coord(DataModel):
 
             coord = Coord(alt, assembly, pos, ref, chrom)
 
-        except:
+
+        except Exception:
             raise Exception('Error while Coord creation')
 
         return coord

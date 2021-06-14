@@ -1,7 +1,9 @@
 
 """
 Classes and functions for accessing Variant
-See data object :func:'variant.models.vcf.data.variant'
+See similary data object documentation
+
+The data access is realized thanks web services
 """
 from typing import List, Optional
 

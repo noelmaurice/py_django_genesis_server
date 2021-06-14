@@ -6,7 +6,7 @@ from pprint import pprint
 
 import requests
 
-from variant.models.repository.repositoryModel import BaseComparator
+from variant.models.repository.parentRepository import BaseComparator
 from variant.tests.parentTest import ParentTest
 from variant.models.repository.variantRepository import VariantRepository
 from variant.web_services import mainScriptWS
@@ -38,20 +38,13 @@ class VariantWebServiceTestClass(ParentTest):
 
 
     def test_insert_variant(self):
+        """
+        The web service for the variant insertion into the database is checked
+        """
         path_file = 'variant/tests/files/test_variant.json'
 
         with open(path_file, 'r') as data_file:
             data_json = data_file.read()
-
-
-        print(data_json)
-
-        # data_dict = json.loads(data_json)
-        #
-        # data_json = json.dumps(data_json, default=lambda o: o.__dict__)
-        # data_dict = json.loads(data_json)
-        #
-        # pprint(data_json)
 
         request = 'http://{}:{}/variant/?test=True'.format(mainScriptWS.HOST,
                                                            mainScriptWS.PORT)
@@ -63,7 +56,7 @@ class VariantWebServiceTestClass(ParentTest):
 
     def test_find_variant_distinct_filters(self):
         """
-        The request for find filters for a sample is checked
+        The web service for finding filters for a sample is checked
         """
 
         request = 'http://{}:{}/variant/filters/?sample_name={}&test=True'.format(mainScriptWS.HOST,
@@ -76,7 +69,7 @@ class VariantWebServiceTestClass(ParentTest):
 
     def test_find_variant_frequencies(self):
         """
-        The request for find filters for a sample is checked
+        The web service for finding sample with a some frequency is checked
         """
 
         request = 'http://{}:{}/variant/filters/?sample_name={}&frequency={}&operator={}&test=True'.format(
@@ -91,6 +84,9 @@ class VariantWebServiceTestClass(ParentTest):
         self.assertEqual(200, response.status_code)
 
     def test_find_node_contains_value(self):
+        """
+        The web service for finding sample with some value for a specific node is checked
+        """
         request = 'http://{}:{}/variant/node_value/?sample_name={}&node={}&value={}&test=True'.format(
                                                                                         mainScriptWS.HOST,
                                                                                         mainScriptWS.PORT,

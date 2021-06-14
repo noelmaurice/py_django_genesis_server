@@ -35,9 +35,10 @@ class Support(DataModel):
         self.source = source
 
     @classmethod
-    def create_all(cls, record: anacore.vcf.VCFRecord, sample: tuple) -> [DataModel]:
+    def create_all(cls, record: anacore.vcf.VCFRecord, sample: tuple):
         """
         All the Support of the variant supports part are created
+
         :param record: Record containing the variant information and for one sample
         :param sample: Sample of the variant
         :return: The Support list for the supports part of the variant
@@ -75,7 +76,7 @@ class Support(DataModel):
                 support = Support(filters, alt_depth, depth, frequency, QUALs[i], SRCs[i])
                 supports.append(support)
 
-        except:
+        except Exception:
             raise Exception('Error while Supports creation')
 
         return supports

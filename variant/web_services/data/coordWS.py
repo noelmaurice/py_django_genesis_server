@@ -1,7 +1,10 @@
 """
 Classes and functions for accessing to Coord, part of a variant
-See data object :func:'variant.models.vcf.data.coord'
+See similary data object documentation
+
+The data access is realized thanks web services
 """
+
 from typing import Optional
 
 from variant.models.data.coord import Coord

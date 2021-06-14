@@ -1,7 +1,6 @@
 """
 :todo check the optional or not values
 """
-import this
 
 from pymongo import MongoClient
 
@@ -12,9 +11,9 @@ class DataModel:
     """
 
     @classmethod
-    def from_json(cls, data: dict) -> this:
+    def from_json(cls, data: dict):
         """
-        Return the object according of the json data representation
+        Return the data object according of the json data representation
 
         :param data: object dict
         :type data: dict
@@ -24,9 +23,10 @@ class DataModel:
 
 
     @staticmethod
-    def get_collect() -> object:
+    def get_collect():
         """
-        Access to the collection of the database
+        Reach to the collection of the database
+
         :rtype: object
         """
         client = MongoClient()

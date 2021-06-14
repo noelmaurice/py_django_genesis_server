@@ -6,7 +6,7 @@ from variant.models.data.parentData import DataModel
 
 
 
-class AF(DataModel):
+class AlleleFrequency(DataModel):
     """
     A AF of popAF, part of a variant
     This object can be managed by the database
@@ -25,9 +25,10 @@ class AF(DataModel):
         self.source = source
 
     @classmethod
-    def create_all(cls, info_ann: [str]) -> [DataModel]:
+    def create_all(cls, info_ann: [str]):
         """
         All the AF of the pop_AF are created
+
         :param info_ann: Annotations about the variant
         :return: List of AF
         :rtype: [AF]
@@ -47,14 +48,14 @@ class AF(DataModel):
                 if item[1] is not None:
                     p = item[0].split('_')
                     if len(p) == 3:
-                        af = AF(item[1], p[1], p[0])
+                        af = AlleleFrequency(item[1], p[1], p[0])
                         AFs.append(af)
                     elif len(p) == 2:
-                        af = AF(item[1], 'Global', p[0])
+                        af = AlleleFrequency(item[1], 'Global', p[0])
                         AFs.append((af))
                     else:
                         raise Exception('Error while Pop_AF creation')
-        except:
+        except Exception:
             AFs = []
 
         return AFs

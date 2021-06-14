@@ -1,6 +1,8 @@
 """
 Classes and functions for accessing to Supports, part of a variant
-See data object :func:'variant.models.vcf.data.supports'
+See similary data object documentation
+
+The data access is realized thanks web services
 """
 from typing import Optional, List
 

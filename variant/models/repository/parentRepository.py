@@ -2,6 +2,9 @@
 from enum import Enum
 
 class BaseComparator(Enum):
+    """
+    Enum comparator signs for requests on the database
+    """
     EQ = 'eq',
     GT = 'gt',
     GTE = 'gte',
@@ -12,4 +15,7 @@ class BaseComparator(Enum):
     NINI = 'nin'
 
 class RepositoryModel():
+    """
+    Parent class for repository classes
+    """
     pass

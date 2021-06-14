@@ -8,7 +8,7 @@ Classes and functions for managing a Variant
 
 import anacore.vcf
 
-from variant.models.data.popAF import AF
+from variant.models.data.popAF import AlleleFrequency
 from variant.models.data.coord import Coord
 from variant.models.data.evidences import Evidences
 from variant.models.data.parentData import DataModel
@@ -29,7 +29,7 @@ class Variant(DataModel):
                  collated_annot: [Annot],
                  coord: Coord,
                  evidences: Evidences,
-                 pop_AF: [AF],
+                 pop_AF: [AlleleFrequency],
                  supports: [Support],
                  xref: Xref) -> None:
         """
@@ -52,7 +52,7 @@ class Variant(DataModel):
         self.xref = xref
 
     @classmethod
-    def from_json(cls, data: dict) -> DataModel:
+    def from_json(cls, data: dict):
         """
         Return the object according of the json data representation
         :param data: object dict
@@ -61,7 +61,7 @@ class Variant(DataModel):
         annot: [Annot] = list(map(Annot.from_json, data['annot']))
         collocated_annot: [Annot] = list(map(Annot.from_json, data["collocated_annot"]))
         supports: [Support] = list(map(Support.from_json, data["supports"]))
-        pop_AF: [AF] = list(map(AF.from_json, data["pop_AF"]))
+        pop_AF: [AlleleFrequency] = list(map(AlleleFrequency.from_json, data["pop_AF"]))
         return cls(data['sample_name'],
                    annot,
                    collocated_annot,
@@ -74,9 +74,10 @@ class Variant(DataModel):
 
     @classmethod
     def create(cls, record: anacore.vcf.VCFRecord, sample: tuple, annotation: str = 'ANN',
-               assembly: str = None) -> DataModel:
+               assembly: str = None):
         """
         The variant is created
+
         :param record: Record containing the variant information and for one sample
         :param sample: The sample considering for the variant
         :param annotation: The annotation part of the variant
@@ -102,7 +103,7 @@ class Variant(DataModel):
             evidences = Evidences.create(sample)
 
             # pop AF
-            AFs = AF.create_all(info_ann)
+            AFs = AlleleFrequency.create_all(info_ann)
 
             # supports
             supports = Support.create_all(record, sample)
@@ -113,7 +114,7 @@ class Variant(DataModel):
             # variant
             variant = Variant(sample[0], annot, collocated_annot, coord, evidences, AFs, supports, xref)
 
-        except:
+        except Exception:
             raise Exception('Error while Variant creation')
 
         return variant

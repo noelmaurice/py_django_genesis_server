@@ -8,7 +8,7 @@ from typing import Optional, List
 
 from variant.models.data.parentData import DataModel
 from variant.models.data.variant import Variant
-from variant.models.repository.repositoryModel import RepositoryModel, BaseComparator
+from variant.models.repository.parentRepository import RepositoryModel, BaseComparator
 
 
 class VariantRepository(RepositoryModel):
@@ -19,7 +19,14 @@ class VariantRepository(RepositoryModel):
     @staticmethod
     def create(variant: Variant,
                collect: object = DataModel.get_collect()):
+        """
+        Data variant inserted on the database
 
+        @param variant: Variant data
+        @param collect: Collection of the database
+        @return: The id of the variant saved
+        @rtype: str
+        """
         data_json = json.dumps(variant, default=lambda o: o.__dict__)
         data_dict = json.loads(data_json)
         req = collect.insert_one(data_dict)
@@ -32,6 +39,7 @@ class VariantRepository(RepositoryModel):
                               collect: object = DataModel.get_collect()):
         """
         Find the distinct filters for the sample
+
         :param collect: Collection of the database
         :param sample_name: Name of the sample
         :return: Distinct filter list
@@ -52,6 +60,7 @@ class VariantRepository(RepositoryModel):
                                 collect: object = DataModel.get_collect()):
         """
         Return the list of variants according with the frequency indicated
+
         :param collect: Collection of the database
         :param sample_name: Name of the sample
         :param frequency: Value wanted
@@ -79,6 +88,7 @@ class VariantRepository(RepositoryModel):
                                  collect: object = DataModel.get_collect()):
         """
         Return the variant list for which the node contains the text searched
+
         :param collect: Collection of the database
         :param sample_name: Name of the sample
         :param node: Node of the json variant

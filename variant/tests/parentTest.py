@@ -12,6 +12,7 @@ class ParentTest(TestCase):
     def get_test_collect():
         """
         Access to the test collection of the database
+
         :rtype: object
         """
         client = MongoClient()

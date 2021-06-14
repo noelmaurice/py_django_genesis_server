@@ -23,9 +23,10 @@ class Xref(DataModel):
 
 
     @classmethod
-    def create(cls, info_ann: [str]) -> DataModel:
+    def create(cls, info_ann: [str]):
         """
         xref part is created for the variant
+
         :param info_ann: Annotations about the variant
         :return: The xref part of the variant
         :rtype: Xref
@@ -58,7 +59,7 @@ class Xref(DataModel):
 
             xref = Xref(HGMD, Unknown, cosmic, dbSNP)
 
-        except:
+        except Exception:
             raise Exception('Error while Xref creation')
 
         return xref
