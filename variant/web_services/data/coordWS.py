@@ -24,7 +24,7 @@ class CoordWS(WSModel):
     class Config:
         orm_mode = True
 
-    def toData(self) -> Coord:
+    def toData(self):
         data = Coord(self.alt, self.assembly, self.pos, self.ref, self.region)
 
         return data

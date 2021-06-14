@@ -22,7 +22,7 @@ class AFWS(WSModel):
     class Config:
         orm_mode = True
 
-    def toData(self) -> AF:
+    def toData(self):
         data = AlleleFrequency(self.AF, self.name, self.source)
 
         return data

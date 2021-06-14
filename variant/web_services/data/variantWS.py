@@ -34,7 +34,7 @@ class VariantWS(WSModel):
     class Config:
         orm_mode = True
 
-    def toData(self) -> Variant:
+    def toData(self):
 
         data = Variant(self.sample_name,
                        [annot.toData() for annot in self.annot],

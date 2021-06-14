@@ -22,7 +22,7 @@ class EvidencesWS(WSModel):
     class Config:
         orm_mode = True
 
-    def toData(self) -> Evidences:
+    def toData(self):
         data = Evidences(self.prec_same_dis, self.prec_all_dis, self.imp_same_dis, self.imp_all_dis)
 
         return data

@@ -23,7 +23,7 @@ class XrefWS(WSModel):
     class Config:
         orm_mode = True
 
-    def toData(self) -> Xref:
+    def toData(self):
         data = Xref(self.HGMD, self.Unknown, self.cosmic, self.dbSNP)
 
         return data

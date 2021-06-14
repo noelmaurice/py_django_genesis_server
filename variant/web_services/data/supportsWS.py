@@ -25,7 +25,7 @@ class SupportWS(WSModel):
     class Config:
         orm_mode = True
 
-    def toData(self) -> Support:
+    def toData(self):
         data = Support(self.filters, self.alt_depth, self.depth, self.frequency, self.quality, self.source)
 
         return data
