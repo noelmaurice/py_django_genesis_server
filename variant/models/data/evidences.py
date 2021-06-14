@@ -38,7 +38,12 @@ class Evidences(DataModel):
         :rtype: Evidences
         """
         try:
-            evidences = Evidences(sample[1]['EVID_PS'], sample[1]['EVID_IS'], sample[1]['EVID_IA'], sample[1]['EVID_PA'])
+            evidences = Evidences(
+                sample[1]['EVID_PS'],
+                sample[1]['EVID_IS'],
+                sample[1]['EVID_IA'],
+                sample[1]['EVID_PA'])
+
         except Exception:
             raise Exception('Error while Evidences creation')
 

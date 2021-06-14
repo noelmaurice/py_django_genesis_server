@@ -20,7 +20,9 @@ async def create_variant(variant_ws: VariantWS, test: bool = False):
     """
     variant = variant_ws.toData()
 
-    id = VariantRepository.create(variant, collect=get_collection(test))
+    id = VariantRepository.create(
+        variant,
+        collect=get_collection(test))
 
     return {'id': id}
 
@@ -34,13 +36,19 @@ async def find_distinct_filters(sample_name: str, test: bool = False):
     @return: The filters found
     @rtype: list(str)
     """
-    filters = VariantRepository.find_distinct_filters(sample_name, collect=get_collection(test))
+    filters = VariantRepository.find_distinct_filters(
+        sample_name,
+        collect=get_collection(test))
 
     return {'filters': filters}
 
 
 @app.get('/variant/node_value/')
-async def find_node_contains_value(sample_name: str, node: str, value: str, test: bool = False):
+async def find_node_contains_value(
+        sample_name: str,
+        node: str,
+        value: str,
+        test: bool = False):
     """
     Search variants with the value for the variant node
 
@@ -51,13 +59,20 @@ async def find_node_contains_value(sample_name: str, node: str, value: str, test
     @return: The variants found
     @rtype: list(Variant)
     """
-    variants = VariantRepository.find_variants_node_value(sample_name, node, [value], collect=get_collection(test))
+    variants = VariantRepository.find_variants_node_value(
+        sample_name,
+        node, [value],
+        collect=get_collection(test))
 
     return variants
 
 
 @app.get('/variant/frequency/')
-async def find_variants_with_frequency(sample_name: str, frequency: float, operator:str = None, test: bool = False):
+async def find_variants_with_frequency(
+        sample_name: str,
+        frequency: float,
+        operator:str = None,
+        test: bool = False):
     """
     Search the variant in accordance with the frequency value
 
@@ -68,6 +83,10 @@ async def find_variants_with_frequency(sample_name: str, frequency: float, opera
     @return: The variants found
     @rtype: list(Variant)
     """
-    variants = VariantRepository.find_variants_frequency(sample_name, frequency, operator, collect=get_collection(test))
+    variants = VariantRepository.find_variants_frequency(
+        sample_name,
+        frequency,
+        operator,
+        collect=get_collection(test))
 
     return variants

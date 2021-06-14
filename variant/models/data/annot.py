@@ -111,15 +111,18 @@ class Annot(DataModel):
                 info_a_allele = info_a['Allele']
 
                 changes = Changes(info_a['HGVSc'], info_a['HGVSp'])
+
                 pathogenicity = Pathogenicity(info_a['CADD_PHRED'], info_a['CLIN_SIG'], info_a['MetaLR_rankscore'],
                                               info_a['VEST4_rankscore'])
+
                 subject = Subject(info_a['Feature'], info_a['Feature_type'], info_a['SYMBOL'])
-                a = Annot(info_a['Consequence'], changes, pathogenicity, subject)
+
+                annot = Annot(info_a['Consequence'], changes, pathogenicity, subject)
 
                 if (info_a_allele == alt):
-                    annots.append(a)
+                    annots.append(annot)
                 else:
-                    collocated_annots.append(a)
+                    collocated_annots.append(annot)
         except Exception:
             raise Exception('Error while Annot creation')
 

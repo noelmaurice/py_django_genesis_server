@@ -59,7 +59,7 @@ class Support(DataModel):
                 value = None
                 try:
                     value = record.info[vc_qual_name]
-                except:
+                except Exception:
                     value = None
                 finally:
                     QUALs.append(value)

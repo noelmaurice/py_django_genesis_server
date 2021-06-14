@@ -12,7 +12,7 @@ class BaseComparator(Enum):
     LT = 'lt',
     LTE = 'lte',
     NE = 'ne',
-    NINI = 'nin'
+    NIN = 'nin'
 
 class RepositoryModel():
     """
