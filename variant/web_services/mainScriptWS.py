@@ -1,6 +1,5 @@
 
 import uvicorn
-
 from fastapi import FastAPI
 
 from variant.models.data.parentData import DataModel

@@ -7,12 +7,11 @@ Classes and functions for managing a Variant
 """
 
 import anacore.vcf
-
-from variant.models.data.popAF import AlleleFrequency
+from variant.models.data.annot import Annot
 from variant.models.data.coord import Coord
 from variant.models.data.evidences import Evidences
 from variant.models.data.parentData import DataModel
-from variant.models.data.annot import Annot
+from variant.models.data.popAF import AlleleFrequency
 from variant.models.data.supports import Support
 from variant.models.data.xref import Xref
 

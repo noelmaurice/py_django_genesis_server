@@ -1,16 +1,12 @@
 """
 Testing variant data with database
 """
-import json
-from pprint import pprint
 
 import requests
 
 from variant.models.repository.parentRepository import BaseComparator
 from variant.tests.parentTest import ParentTest
-from variant.models.repository.variantRepository import VariantRepository
 from variant.web_services import mainScriptWS
-from variant.web_services.data.variantWS import VariantWS
 
 
 class VariantWebServiceTestClass(ParentTest):

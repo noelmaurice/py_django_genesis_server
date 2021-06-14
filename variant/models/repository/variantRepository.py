@@ -2,8 +2,8 @@
 Functions for doing requests on variant database objects
 """
 
-import re
 import json
+import re
 from typing import Optional, List
 
 from variant.models.data.parentData import DataModel

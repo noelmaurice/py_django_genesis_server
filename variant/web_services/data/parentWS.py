@@ -1,8 +1,6 @@
 """
 :todo check the optional or not values
 """
-import this
-from typing import List
 
 from pydantic import BaseModel
 

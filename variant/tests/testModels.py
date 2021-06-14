@@ -4,8 +4,8 @@ Testing variant data with database
 import json
 
 from variant.models.data.variant import Variant
-from variant.tests.parentTest import ParentTest
 from variant.models.repository.variantRepository import VariantRepository
+from variant.tests.parentTest import ParentTest
 
 
 class VariantDataTestClass(ParentTest):

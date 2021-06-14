@@ -8,11 +8,11 @@ The data access is realized thanks web services
 from typing import List, Optional
 
 from variant.models.data.variant import Variant
-from variant.web_services.data.parentWS import WSModel
-from variant.web_services.data.popAFWS import AFWS
+from variant.web_services.data.annotWS import AnnotWS
 from variant.web_services.data.coordWS import CoordWS
 from variant.web_services.data.evidencesWS import EvidencesWS
-from variant.web_services.data.annotWS import AnnotWS
+from variant.web_services.data.parentWS import WSModel
+from variant.web_services.data.popAFWS import AFWS
 from variant.web_services.data.supportsWS import SupportWS
 from variant.web_services.data.xrefWS import XrefWS
 
