@@ -1,0 +1,84 @@
+"""
+Classes and functions for accessing to annotation, part of a variant
+See data object :func:'variant.models.vcf.data.annot'
+"""
+
+from typing import Optional
+
+from variant.models.data.annot import Changes, Pathogenicity, Subject, Annot
+from variant.web_services.data.parentWS import WSModel
+
+
+class ChangesWS(WSModel):
+    """
+    Changes object, part of a annot or collocated
+    """
+
+    HGVSc: Optional[str]
+    HGVSp: Optional[str]
+
+    class Config:
+        orm_mode = True
+
+    def toData(self) -> Changes:
+        data = Changes(self.HGVSc, self.HGVSp)
+
+        return data
+
+
+class PathogenicityWS(WSModel):
+    """
+    Pathogenicity object, part of a annot or collocated
+    """
+
+    CADD_phred: Optional[str]
+    ClinVar: Optional[str]
+    MetaLR_rankscore: Optional[str]
+    VEST4_rankscore: Optional[str]
+
+    class Config:
+        orm_mode = True
+
+    def toData(self) -> Pathogenicity:
+        data = Pathogenicity(self.CADD_phred, self.ClinVar, self.MetaLR_rankscore, self.VEST4_rankscore)
+
+        return data
+
+class SubjectWS(WSModel):
+    """
+    Subject object, part of a annot or collocated
+    """
+
+    feature: Optional[str]
+    feature_type: Optional[str]
+    symbol: Optional[str]
+
+    class Config:
+        orm_mode = True
+
+    def toData(self) -> Subject:
+        data = Subject(self.feature, self.feature_type, self.symbol)
+
+        return data
+
+
+class AnnotWS(WSModel):
+    """
+    The annot or the collocated annot, part of a variant
+    """
+
+    conseq: Optional[str]
+    changes: ChangesWS
+    pathogenicity: PathogenicityWS
+    subject: SubjectWS
+
+    class Config:
+        orm_mode = True
+
+    def toData(self) -> Annot:
+        annot = Annot(self.conseq,
+                      self.changes.toData(),
+                      self.pathogenicity.toData(),
+                      self.subject.toData())
+
+        return annot
