@@ -6,6 +6,10 @@
 > 
 > Provide web services for doing request about variants (create variant, find variant samples, and so on)
 
+### Operating diagram for variant_project v0.1.0
+
+![Operation diagram for variant_projet v0.1.0](doc/img/operating_diagram_variant_project_v0.1.0.png)
+
 ### Warning
 
 There is two versions of the python library pysam : on a windows system install **pysam-win**, and install **pysam** for other systems.
@@ -18,6 +22,6 @@ There is two versions of the python library pysam : on a windows system install 
 
 > python manage.py test
 
-## Main web service uvicorn file
+## Main web service uvicorn script file
 
 > mainScriptWS.py
