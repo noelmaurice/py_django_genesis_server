@@ -54,6 +54,7 @@ class Variant(DataModel):
     def from_json(cls, data: dict):
         """
         Return the object according of the json data representation
+
         :param data: object dict
         :rtype: Variant
         """
@@ -72,7 +73,10 @@ class Variant(DataModel):
                    )
 
     @classmethod
-    def create(cls, record: anacore.vcf.VCFRecord, sample: tuple, annotation: str = 'ANN',
+    def create(cls,
+               record: anacore.vcf.VCFRecord,
+               sample: tuple,
+               annotation: str = 'ANN',
                assembly: str = None):
         """
         The variant is created
@@ -111,7 +115,14 @@ class Variant(DataModel):
             xref = Xref.create(info_ann)
 
             # variant
-            variant = Variant(sample[0], annot, collocated_annot, coord, evidences, AFs, supports, xref)
+            variant = Variant(sample[0],
+                              annot,
+                              collocated_annot,
+                              coord,
+                              evidences,
+                              AFs,
+                              supports,
+                              xref)
 
         except Exception:
             raise Exception('Error while Variant creation')

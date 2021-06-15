@@ -1,5 +1,10 @@
 """
-:todo check the optional or not values
+Classes and functions for accessing Variant data thanks web services
+See similary data object documentation
+"""
+
+"""
+:todo check the optional or None values
 """
 
 from pydantic import BaseModel
@@ -7,7 +12,7 @@ from pydantic import BaseModel
 
 class WSModel(BaseModel):
     """
-    All the ws objects inherit of BaseModel
+    All the web service objects inherit of BaseModel
     """
 
     pass

@@ -39,7 +39,7 @@ setup(
     install_requires=load_requirements("requirements.txt"),
     url='https://github.com/noelmaurice-iuct-oncopole/variant_project',
     python_requires='>=3.8',
-    keywords='bio VCF variant sample filter annotation',
+    keywords='biology VCF variant sample filter annotation genome',
     # long_description_content_type='text/markdown',
     # long_description=get_long_description()
 )

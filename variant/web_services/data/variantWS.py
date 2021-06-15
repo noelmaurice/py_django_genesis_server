@@ -1,9 +1,7 @@
 
 """
-Classes and functions for accessing Variant
+Classes and functions for accessing Variant thanks the web services
 See similary data object documentation
-
-The data access is realized thanks web services
 """
 from typing import List, Optional
 
@@ -19,7 +17,7 @@ from variant.web_services.data.xrefWS import XrefWS
 
 class VariantWS(WSModel):
     """
-    Variant object
+    Variant web service object
     """
 
     sample_name: str

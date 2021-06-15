@@ -2,7 +2,7 @@
 Classes and functions for accessing to Evidences, part of a variant
 See similary data object documentation
 
-The data access is realized thanks web services
+The variant data access can be realized thanks the web services
 """
 from typing import Optional
 
@@ -12,7 +12,7 @@ from variant.web_services.data.parentWS import WSModel
 
 class EvidencesWS(WSModel):
     """
-    The evidences part of a variant
+    The evidences part of a variant web service object
     """
     prec_same_dis: Optional[str]
     prec_all_dis: Optional[str]

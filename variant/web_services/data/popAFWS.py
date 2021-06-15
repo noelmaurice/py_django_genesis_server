@@ -2,7 +2,7 @@
 Classes and functions for accessing to popAF, part of a variant
 See similary data object documentation
 
-The data access is realized thanks web services
+The variant data access can be realized thanks the web services
 """
 from typing import Optional
 
@@ -12,7 +12,7 @@ from variant.web_services.data.parentWS import WSModel
 
 class AFWS(WSModel):
     """
-    A AF of popAF, part of a variant
+    A AF of popAF, part of a variant web service object
     """
 
     AF: Optional[float]

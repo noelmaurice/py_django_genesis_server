@@ -2,7 +2,7 @@
 Classes and functions for accessing to annotation, part of a variant
 See similary data object documentation
 
-The data access is realized thanks web services
+The variant data access can be realized thanks the web services
 """
 
 from typing import Optional
@@ -13,7 +13,7 @@ from variant.web_services.data.parentWS import WSModel
 
 class ChangesWS(WSModel):
     """
-    Changes object, part of a annot or collocated
+    Changes object, part of a annot or collocated web service object
     """
 
     HGVSc: Optional[str]
@@ -30,7 +30,7 @@ class ChangesWS(WSModel):
 
 class PathogenicityWS(WSModel):
     """
-    Pathogenicity object, part of a annot or collocated
+    Pathogenicity object, part of a annot or collocated web service object
     """
 
     CADD_phred: Optional[str]
@@ -48,7 +48,7 @@ class PathogenicityWS(WSModel):
 
 class SubjectWS(WSModel):
     """
-    Subject object, part of a annot or collocated
+    Subject object, part of a annot or collocated web service object
     """
 
     feature: Optional[str]
@@ -66,7 +66,7 @@ class SubjectWS(WSModel):
 
 class AnnotWS(WSModel):
     """
-    The annot or the collocated annot, part of a variant
+    The annot or the collocated annot, part of a variant web service object
     """
 
     conseq: Optional[str]

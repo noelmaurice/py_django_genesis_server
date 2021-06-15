@@ -2,7 +2,7 @@
 Classes and functions for accessing to Supports, part of a variant
 See similary data object documentation
 
-The data access is realized thanks web services
+The variant data access can be realized thanks the web services
 """
 from typing import Optional, List
 
@@ -12,7 +12,7 @@ from variant.web_services.data.parentWS import WSModel
 
 class SupportWS(WSModel):
     """
-    The Support for a variant
+    The Support for a variant web service object
     """
 
     filters: Optional[List[str]]
