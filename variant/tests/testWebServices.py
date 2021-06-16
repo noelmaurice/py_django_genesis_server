@@ -1,6 +1,7 @@
 """
 Testing variant data with database
 """
+import json
 
 import requests
 
@@ -40,12 +41,14 @@ class VariantWebServiceTestClass(ParentTest):
         path_file = 'variant/tests/files/test_variant.json'
 
         with open(path_file, 'r') as data_file:
-            data_json = data_file.read()
+            data_str = data_file.read()
+
+        data_dict = json.loads(data_str)
 
         request = 'http://{}:{}/variant/?test=True'.format(mainScriptWS.HOST,
                                                            mainScriptWS.PORT)
 
-        response = requests.post(request, data=data_json)
+        response = requests.post(request, json=data_dict)
 
         self.assertEqual(200, response.status_code)
 

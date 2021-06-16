@@ -23,7 +23,7 @@ class Xref(DataModel):
 
 
     @classmethod
-    def create(cls, info_ann: [str]):
+    def create(cls, info_ann: [str]) -> DataModel:
         """
         xref part is created for the variant
 

@@ -35,7 +35,7 @@ class Support(DataModel):
         self.source = source
 
     @classmethod
-    def create_all(cls, record: anacore.vcf.VCFRecord, sample: tuple):
+    def create_all(cls, record: anacore.vcf.VCFRecord, sample: tuple) -> [DataModel]:
         """
         All the Support of the variant supports part are created
 

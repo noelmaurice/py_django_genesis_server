@@ -34,7 +34,7 @@ class Pathogenicity(DataModel):
                  CADD_phred: str,
                  ClinVar: str,
                  MetaLR_rankscore: str,
-                 VEST4_rankscore: str):
+                 VEST4_rankscore: str) -> None:
         """
         :param CADD_phred: CADD_phred of the pathogenicity part of the annot
         :param ClinVar: ClinVar of the pathogenicity part of the annot
@@ -56,7 +56,7 @@ class Subject(DataModel):
     def __init__(self,
                  feature: str,
                  feature_type: str,
-                 symbol: str):
+                 symbol: str) -> None:
         """
 
         :param feature:
@@ -78,7 +78,7 @@ class Annot(DataModel):
                  conseq: str,
                  changes: Changes,
                  pathogenicity: Pathogenicity,
-                 subject: Subject):
+                 subject: Subject) -> None:
         """
         :param conseq: conseq part of the annot
         :param changes: chances part of the annot
@@ -92,7 +92,7 @@ class Annot(DataModel):
 
 
     @classmethod
-    def create_all(cls, record: anacore.vcf.VCFRecord, info_ann: [str]):
+    def create_all(cls, record: anacore.vcf.VCFRecord, info_ann: [str]) -> [DataModel, DataModel]:
         """
         All the annot and collocated_annot of the variant are created
 

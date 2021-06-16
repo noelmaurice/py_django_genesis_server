@@ -14,13 +14,9 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.8 (test)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="anacore" />
-  </component>
-  <component name="PyDocumentationSettings">
-    <option name="format" value="EPYTEXT" />
-    <option name="myDocStringFormat" value="Epytext" />
+    <orderEntry type="module" module-name="test" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import re
-from distutils.core import setup
+from setuptools import setup
 
 
 def get_long_description():
@@ -27,6 +27,18 @@ def load_requirements(path):
         requirements = [elt.strip().replace(" ", "") for elt in FH]
     return requirements
 
+# python setup.py bdist_egg
+
+# python setup.py bdist_wheel
+# pip install dist/variant_project-0.1.0-py3-none-any.whl
+
+def package_files(directory):
+    paths = []
+    for (path, directories, filenames) in os.walk(directory):
+        for filename in filenames:
+            paths.append(os.path.join('..', path, filename))
+    return paths
+
 
 setup(
     name='variant_project',
@@ -35,11 +47,19 @@ setup(
     author='Noël MAURICE - IUCT Oncopole Toulouse',
     author_email='maurice.noel@iuct-oncopole.fr',
     license='CeCILL v2.1',
-    packages=[],
+    packages=['variant'],
+    package_data={'variant': package_files('variant')},
     install_requires=load_requirements("requirements.txt"),
     url='https://github.com/noelmaurice-iuct-oncopole/variant_project',
     python_requires='>=3.8',
     keywords='biology VCF variant sample filter annotation genome',
-    # long_description_content_type='text/markdown',
-    # long_description=get_long_description()
+    long_description_content_type = 'text/markdown',
+    long_description = get_long_description(),
+
+
+    classifiers=[
+            "Development Status :: Release candidate",
+            "Intended Audience :: Developers",
+            "Programming Language :: Python :: >3.9.0"
+    ]
 )

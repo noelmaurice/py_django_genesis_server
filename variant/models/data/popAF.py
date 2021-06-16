@@ -25,7 +25,7 @@ class AlleleFrequency(DataModel):
         self.source = source
 
     @classmethod
-    def create_all(cls, info_ann: [str]):
+    def create_all(cls, info_ann: [str]) -> [DataModel]:
         """
         All the AF of the pop_AF are created
 

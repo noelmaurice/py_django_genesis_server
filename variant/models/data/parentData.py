@@ -11,7 +11,7 @@ class DataModel:
     """
 
     @classmethod
-    def from_json(cls, data: dict):
+    def from_json(cls, data: dict) -> dict:
         """
         Return the data object according of the json data representation
 
@@ -23,7 +23,7 @@ class DataModel:
 
 
     @staticmethod
-    def get_collect():
+    def get_collect() -> object:
         """
         Reach to the collection of the database
 

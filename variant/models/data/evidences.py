@@ -15,7 +15,7 @@ class Evidences(DataModel):
                  prec_same_dis: str,
                  prec_all_dis: str,
                  imp_same_dis: str,
-                 imp_all_dis: str):
+                 imp_all_dis: str) -> None:
         """
 
         :param prec_same_dis: prec_same_dis for the variant
@@ -29,7 +29,7 @@ class Evidences(DataModel):
         self.imp_all_dis = imp_all_dis
 
     @classmethod
-    def create(cls, sample: tuple):
+    def create(cls, sample: tuple) -> DataModel:
         """
         evidences part is created for the variant
 
