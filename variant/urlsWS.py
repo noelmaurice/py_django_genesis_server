@@ -6,6 +6,6 @@ from variant import viewsWS as views_ws
 app_name = 'variant'
 
 urlpatterns = [
-    path('', views.index, name='index'),
 
+    path('', views_ws.VariantView.as_view(), name='variantWS'),
 ]
