@@ -1,9 +1,9 @@
 from django.urls import path
 
-from variant import views as variant_views
+from variant import views as views
 
 app_name = 'variant'
 
 urlpatterns = [
-    path('', variant_views.index, name='index'),
+    path('', views.index, name='index'),
 ]
