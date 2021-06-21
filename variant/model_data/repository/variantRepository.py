@@ -6,9 +6,9 @@ import json
 import re
 from typing import Optional, List
 
-from variant.models.data.parentData import DataModel
-from variant.models.data.variant import Variant
-from variant.models.repository.parentRepository import RepositoryModel, BaseComparator
+from variant.model_data.data.parentData import DataModel
+from variant.model_data.data.variant import Variant
+from variant.model_data.repository.parentRepository import RepositoryModel, BaseComparator
 
 
 class VariantRepository(RepositoryModel):

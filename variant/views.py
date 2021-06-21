@@ -3,9 +3,9 @@ import time
 from django.http import JsonResponse
 
 from anacore.annotVcf import AnnotVCFIO
-from variant.models.data.parentData import DataModel
-from variant.models.data.variant import Variant
-from variant.models.repository.variantRepository import VariantRepository
+from variant.model_data.data.parentData import DataModel
+from variant.model_data.data.variant import Variant
+from variant.model_data.repository.variantRepository import VariantRepository
 
 
 def index(request):
@@ -13,7 +13,7 @@ def index(request):
     collect.remove()
 
     for i in range(1):
-        reader = AnnotVCFIO('variant/models/files/variants_filtered.vcf')
+        reader = AnnotVCFIO('variant/model_data/files/variants_filtered.vcf')
 
         # variants created
         for record in reader:

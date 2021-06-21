@@ -7,7 +7,7 @@ The variant data access can be realized thanks the web services
 
 from typing import Optional
 
-from variant.models.data.annot import Changes, Pathogenicity, Subject, Annot
+from variant.model_data.data.annot import Changes, Pathogenicity, Subject, Annot
 from variant.web_services.data.parentWS import WSModel
 
 

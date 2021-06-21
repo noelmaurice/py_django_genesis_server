@@ -7,7 +7,7 @@ The variant data access can be realized thanks the web services
 
 from typing import Optional
 
-from variant.models.data.coord import Coord
+from variant.model_data.data.coord import Coord
 from variant.web_services.data.parentWS import WSModel
 
 

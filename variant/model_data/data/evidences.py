@@ -2,7 +2,7 @@
 Classes and functions for managing a Evidences, part of a variant
 """
 
-from variant.models.data.parentData import DataModel
+from variant.model_data.data.parentData import DataModel
 
 
 class Evidences(DataModel):

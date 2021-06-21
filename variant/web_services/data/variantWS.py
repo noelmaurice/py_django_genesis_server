@@ -5,7 +5,7 @@ See similary data object documentation
 """
 from typing import List, Optional
 
-from variant.models.data.variant import Variant
+from variant.model_data.data.variant import Variant
 from variant.web_services.data.annotWS import AnnotWS
 from variant.web_services.data.coordWS import CoordWS
 from variant.web_services.data.evidencesWS import EvidencesWS

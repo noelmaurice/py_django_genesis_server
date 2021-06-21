@@ -5,7 +5,7 @@ import json
 
 import requests
 
-from variant.models.repository.parentRepository import BaseComparator
+from variant.model_data.repository.parentRepository import BaseComparator
 from variant.tests.parentTest import ParentTest
 from variant.web_services import mainScriptWS
 
@@ -15,7 +15,7 @@ class VariantWebServiceTestClass(ParentTest):
     Class for testing the web services.
 
     For each test, only the request status of the web service is tested because the repository used is tested
-    by the data model tests.
+    by the data model_data tests.
     """
 
     HOST = mainScriptWS.HOST

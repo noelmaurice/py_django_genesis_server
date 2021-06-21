@@ -3,8 +3,8 @@ Testing variant data with database
 """
 import json
 
-from variant.models.data.variant import Variant
-from variant.models.repository.variantRepository import VariantRepository
+from variant.model_data.data.variant import Variant
+from variant.model_data.repository.variantRepository import VariantRepository
 from variant.tests.parentTest import ParentTest
 
 

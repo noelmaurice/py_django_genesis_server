@@ -2,7 +2,7 @@
 Variant web services
 """
 
-from variant.models.repository.variantRepository import VariantRepository
+from variant.model_data.repository.variantRepository import VariantRepository
 from variant.web_services.data.variantWS import VariantWS
 
 from variant.web_services.mainScriptWS import app, get_collection

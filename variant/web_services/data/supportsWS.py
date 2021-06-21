@@ -6,7 +6,7 @@ The variant data access can be realized thanks the web services
 """
 from typing import Optional, List
 
-from variant.models.data.supports import Support
+from variant.model_data.data.supports import Support
 from variant.web_services.data.parentWS import WSModel
 
 

@@ -2,7 +2,7 @@
 import uvicorn
 from fastapi import FastAPI
 
-from variant.models.data.parentData import DataModel
+from variant.model_data.data.parentData import DataModel
 from variant.tests.parentTest import ParentTest
 
 """

@@ -2,7 +2,7 @@
 Classes and functions for managing a Xref, part of a variant
 """
 
-from variant.models.data.parentData import DataModel
+from variant.model_data.data.parentData import DataModel
 
 
 class Xref(DataModel):

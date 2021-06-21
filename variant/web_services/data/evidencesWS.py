@@ -6,7 +6,7 @@ The variant data access can be realized thanks the web services
 """
 from typing import Optional
 
-from variant.models.data.evidences import Evidences
+from variant.model_data.data.evidences import Evidences
 from variant.web_services.data.parentWS import WSModel
 
 
