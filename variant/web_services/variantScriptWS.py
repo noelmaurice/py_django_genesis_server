@@ -71,8 +71,7 @@ async def find_node_contains_value(
 async def find_variants_with_frequency(
         sample_name: str,
         frequency: float,
-        operator:str = None,
-        test: bool = False):
+        operator:str = None):
     """
     Search the variant in accordance with the frequency value
 
