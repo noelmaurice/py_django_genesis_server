@@ -1,6 +1,6 @@
 
-from django.http import JsonResponse
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from variant.model_data.data.parentData import DataModel
@@ -23,7 +23,7 @@ class VariantView(APIView):
 
         id = str(req.inserted_id)
 
-        return JsonResponse({'id': id}, safe=False)
+        return Response({'id': id})
 
 
 @api_view(['GET'])
@@ -33,7 +33,7 @@ def find_distinct_filters(request, sample_name):
         sample_name,
         collect = DataModel.get_collect())
 
-    return JsonResponse({'filters': filters}, safe=False)
+    return Response({'filters': filters})
 
 
 @api_view(['GET'])
@@ -56,7 +56,7 @@ def find_node_contains_value(request,
         node, [value],
         collect = DataModel.get_collect())
 
-    return JsonResponse({}, safe=False)
+    return Response(variants)
 
 @api_view(['GET'])
 def find_variants_with_frequency(request,
@@ -79,4 +79,4 @@ def find_variants_with_frequency(request,
         operator,
         collect = DataModel.get_collect())
 
-    return JsonResponse({}, safe=False)
+    return Response(variants)
