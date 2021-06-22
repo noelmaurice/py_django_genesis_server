@@ -25,14 +25,18 @@ class VariantView(APIView):
              *args,
              **kwargs):
 
-        if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
-            collect = ParentTest.get_test_collect()
-        else:
-            collect = DataModel.get_collect()
+        try:
+            if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
+                collect = ParentTest.get_test_collect()
+            else:
+                collect = DataModel.get_collect()
 
-        req = collect.insert_one(request.data)
+            req = collect.insert_one(request.data)
 
-        id = str(req.inserted_id)
+            id = str(req.inserted_id)
+
+        except Exception:
+            raise Exception('Error while the web service call')
 
         return Response({'id': id})
 
@@ -40,14 +44,19 @@ class VariantView(APIView):
 @api_view(['GET'])
 def find_distinct_filters(request,
                           sample_name):
-    if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
-        collect = ParentTest.get_test_collect()
-    else:
-        collect = DataModel.get_collect()
 
-    filters = VariantRepository.find_distinct_filters(
-        sample_name,
-        collect)
+    try:
+        if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
+            collect = ParentTest.get_test_collect()
+        else:
+            collect = DataModel.get_collect()
+
+        filters = VariantRepository.find_distinct_filters(
+            sample_name,
+            collect)
+
+    except Exception:
+        raise Exception('Error while the web service call')
 
     return Response({'filters': filters})
 
@@ -68,17 +77,23 @@ def find_node_contains_value(request,
     @rtype: list(Variant)
     """
 
-    if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
-        collect = ParentTest.get_test_collect()
-    else:
-        collect = DataModel.get_collect()
+    try:
 
-    variants = VariantRepository.find_variants_node_value(
-        sample_name,
-        node, [value],
-        collect)
+        if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
+            collect = ParentTest.get_test_collect()
+        else:
+            collect = DataModel.get_collect()
+
+        variants = VariantRepository.find_variants_node_value(
+            sample_name,
+            node, [value],
+            collect)
+
+    except Exception:
+        raise Exception('Error while the web service call')
 
     return Response(variants)
+
 
 @api_view(['GET'])
 def find_variants_with_frequency(request,
@@ -97,6 +112,7 @@ def find_variants_with_frequency(request,
     """
 
     try:
+
         if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
             collect = ParentTest.get_test_collect()
         else:
