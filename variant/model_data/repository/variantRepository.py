@@ -8,7 +8,7 @@ from typing import Optional, List
 
 from variant.model_data.data.parentData import DataModel
 from variant.model_data.data.variant import Variant
-from variant.model_data.repository.parentRepository import RepositoryModel, BaseComparator
+from variant.model_data.repository.parentRepository import RepositoryModel, ComparatorEnum
 
 
 class VariantRepository(RepositoryModel):
@@ -56,7 +56,7 @@ class VariantRepository(RepositoryModel):
     @staticmethod
     def find_variants_frequency(sample_name: str,
                                 frequency: float,
-                                operator: BaseComparator = BaseComparator.GT,
+                                comparator: str,
                                 collect: object = DataModel.get_collect()):
         """
         Return the list of variants according with the frequency indicated
@@ -64,14 +64,15 @@ class VariantRepository(RepositoryModel):
         :param collect: Collection of the database
         :param sample_name: Name of the sample
         :param frequency: Value wanted
-        :param operator: Comparaison operator used for the find request
+        :param comparator: Comparaison operator used for the find request
         :return: Json Variant list
         :rtype: [dict]
         """
-        op = '$' + operator
+
+        comparator = '$' + comparator
         req = collect.find({
                 'sample_name': sample_name,
-                'supports.frequency': {op: frequency}
+                'supports.frequency': {comparator: frequency}
             },
             {
                 '_id': 0
@@ -84,8 +85,8 @@ class VariantRepository(RepositoryModel):
     def find_variants_node_value(sample_name: str,
                                  node: str,
                                  values: Optional[List['str']],
-                                 ignore_case: bool = False,
-                                 collect: object = DataModel.get_collect()):
+                                 collect: object = DataModel.get_collect(),
+                                 ignore_case: bool = False):
         """
         Return the variant list for which the node contains the text searched
 

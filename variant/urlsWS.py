@@ -18,7 +18,7 @@ urlpatterns = [
          name='find_node_contains_value'),
 
     # <SERVER>/ws/variant/frequency/splTOTO/40/gt/
-    path('frequency/<str:sample_name>/<int:frequency>/<str:operator>/',
+    path('frequency/<str:sample_name>/<int:frequency>/<str:comparator>/',
          views_ws.find_variants_with_frequency,
          name='find_variants_with_frequency')
 

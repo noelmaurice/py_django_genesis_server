@@ -47,7 +47,7 @@ def requests():
 
     # request
     start = time.time()
-    variants = VariantRepository.find_variants_frequency('splTOTO', 40, operator='lt')
+    variants = VariantRepository.find_variants_frequency('splTOTO', 40, comparator='lt')
     done = time.time()
     print('\r\nfind_variant_frequencies -> ', round(done - start, 4))
     for v in variants:

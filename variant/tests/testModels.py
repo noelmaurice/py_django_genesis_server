@@ -57,7 +57,7 @@ class VariantDataTestClass(ParentTest):
         """
 
         variants = VariantRepository.find_variants_frequency('splTOTO', 40.00,
-                                                             operator='lt',
+                                                             comparator='lt',
                                                              collect=ParentTest.get_test_collect())
 
         self.assertEqual(1, len(variants))

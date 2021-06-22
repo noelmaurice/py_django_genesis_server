@@ -5,9 +5,8 @@ import json
 
 import requests
 
-from variant.model_data.repository.parentRepository import BaseComparator
+from variant.model_data.repository.parentRepository import ComparatorEnum
 from variant.tests.parentTest import ParentTest
-from variant.web_services import mainScriptWS
 
 
 class VariantWebServiceTestClass(ParentTest):
@@ -18,8 +17,8 @@ class VariantWebServiceTestClass(ParentTest):
     by the data model_data tests.
     """
 
-    HOST = mainScriptWS.HOST
-    PORT = str(mainScriptWS.PORT)
+    HOST = 'localhost'
+    PORT = 8000
 
     @classmethod
     def setUpTestData(cls):
@@ -45,8 +44,9 @@ class VariantWebServiceTestClass(ParentTest):
 
         data_dict = json.loads(data_str)
 
-        request = 'http://{}:{}/variant/?test=True'.format(mainScriptWS.HOST,
-                                                           mainScriptWS.PORT)
+        request = 'http://{host}:{port}/ws/variant/?test=True'.format(
+                                                host=VariantWebServiceTestClass.HOST,
+                                                port=VariantWebServiceTestClass.PORT)
 
         response = requests.post(request, json=data_dict)
 
@@ -58,9 +58,10 @@ class VariantWebServiceTestClass(ParentTest):
         The web service for finding filters for a sample is checked
         """
 
-        request = 'http://{}:{}/variant/filters/?sample_name={}&test=True'.format(mainScriptWS.HOST,
-                                                                        mainScriptWS.PORT,
-                                                                        'splTOTO')
+        request = 'http://{host}:{port}/ws/variant/filters/{sample_name}/?test=True'.format(
+                                                host=VariantWebServiceTestClass.HOST,
+                                                port=VariantWebServiceTestClass.PORT,
+                                                sample_name='splTOTO')
         response = requests.get(request)
 
         self.assertEqual(200, response.status_code)
@@ -71,12 +72,15 @@ class VariantWebServiceTestClass(ParentTest):
         The web service for finding sample with a some frequency is checked
         """
 
-        request = 'http://{}:{}/variant/filters/?sample_name={}&frequency={}&operator={}&test=True'.format(
-                                                                                                mainScriptWS.HOST,
-                                                                                                mainScriptWS.PORT,
-                                                                                                'splTOTO',
-                                                                                                40,
-                                                                                                BaseComparator.GT)
+        request = 'http://{host}:{port}/ws/variant/frequency/{sample_name}/{frequency}/{comparator}/?test=True'.format(
+                                                host=VariantWebServiceTestClass.HOST,
+                                                port=VariantWebServiceTestClass.PORT,
+                                                sample_name='splTOTO',
+                                                frequency=40,
+                                                comparator=ComparatorEnum.GT.value)
+
+        print((ComparatorEnum.GT).value)
+        print(request)
 
         response = requests.get(request)
 
@@ -86,12 +90,12 @@ class VariantWebServiceTestClass(ParentTest):
         """
         The web service for finding sample with some value for a specific node is checked
         """
-        request = 'http://{}:{}/variant/node_value/?sample_name={}&node={}&value={}&test=True'.format(
-                                                                                        mainScriptWS.HOST,
-                                                                                        mainScriptWS.PORT,
-                                                                                        'splTOTO',
-                                                                                        'annot.changes.HGVSc',
-                                                                                        '524G>A')
+        request = 'http://{host}:{port}/ws/variant/node_value/{sample_name}/{node}/{value}/?test=True'.format(
+                                                host=VariantWebServiceTestClass.HOST,
+                                                port=VariantWebServiceTestClass.PORT,
+                                                sample_name='splTOTO',
+                                                node='annot.changes.HGVSc',
+                                                value='524G>A')
 
         response = requests.get(request)
 

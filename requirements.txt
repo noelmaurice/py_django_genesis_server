@@ -2,8 +2,6 @@ django
 pymongo
 anacore
 pysam-win
-FastAPI
-uvicorn[standard]
 sphinx
 pydantic
 rest_framework
