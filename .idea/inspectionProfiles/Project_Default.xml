@@ -1,6 +1,7 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+<<<<<<< HEAD
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
@@ -19,10 +20,23 @@
             <item index="11" class="java.lang.String" itemvalue="urllib3" />
             <item index="12" class="java.lang.String" itemvalue="idna" />
             <item index="13" class="java.lang.String" itemvalue="rest_framework" />
+=======
+    <inspection_tool class="JupyterKernelInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="5">
+            <item index="0" class="java.lang.String" itemvalue="Django" />
+            <item index="1" class="java.lang.String" itemvalue="pytz" />
+            <item index="2" class="java.lang.String" itemvalue="django-bootstrap4" />
+            <item index="3" class="java.lang.String" itemvalue="dacite" />
+            <item index="4" class="java.lang.String" itemvalue="PyVCF" />
+>>>>>>> Save
           </list>
         </value>
       </option>
     </inspection_tool>
+<<<<<<< HEAD
     <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="ignoredErrors">
         <list>
@@ -35,6 +49,13 @@
         <list>
           <option value="object.remove" />
           <option value="object.insert_one" />
+=======
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="list.values" />
+          <option value="django.core.urlresolvers" />
+>>>>>>> Save
         </list>
       </option>
     </inspection_tool>

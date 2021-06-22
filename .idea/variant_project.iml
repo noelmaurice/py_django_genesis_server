@@ -19,10 +19,13 @@
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
+<<<<<<< HEAD
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/variant/_templates" />
       </list>
     </option>
+=======
+>>>>>>> Save
   </component>
 </module>
