@@ -10,8 +10,6 @@ class PartSerializer(serializers.ModelSerializer):
 
 
 class SampleSerializer(serializers.ModelSerializer):
-
-    # the related parts of the sample
     values = PartSerializer(many=True, source='part_set')
 
     class Meta:
