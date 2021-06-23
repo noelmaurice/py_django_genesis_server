@@ -1,30 +1,33 @@
+"""
+Variant web services
+"""
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from variant.model_data.data.parentData import DataModel
-from variant.model_data.repository.parentRepository import ComparatorEnum
 from variant.model_data.repository.variantRepository import VariantRepository
-from variant.tests import parentTest
 from variant.tests.parentTest import ParentTest
 
 
 class VariantView(APIView):
     """
-        The variant is saved in the database
-
-        @param variant_ws: Variant to save
-        @param test: Test mode
-        @return: Id of the variant saved
-        @rtype: str
-        """
+    Requests on the variants
+    """
 
     def post(self,
              request,
              *args,
              **kwargs):
+        """
+        Save the variant and return its ID
 
+        @param request: Request object with variant to record
+        @param args: args attributes
+        @param kwargs: kwargs attributes
+        @return: The ID saved variant
+        """
         try:
             if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
                 collect = ParentTest.get_test_collect()
@@ -44,7 +47,12 @@ class VariantView(APIView):
 @api_view(['GET'])
 def find_distinct_filters(request,
                           sample_name):
-
+    """
+    Search the filters of the sample
+    @param request: Request object
+    @param sample_name: Sample name
+    @return: The filter list of the sample
+    """
     try:
         if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
             collect = ParentTest.get_test_collect()
