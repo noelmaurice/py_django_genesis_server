@@ -5,5 +5,5 @@ from sample import viewsWS as views_ws
 app_name = 'sample'
 
 urlpatterns = [
-    path('', views_ws.SampleView.as_view()),
+    path('', views_ws.SampleView.as_view(), name='all_samples'),
 ]
