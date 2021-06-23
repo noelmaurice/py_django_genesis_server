@@ -1,15 +1,13 @@
+from django.contrib import admin
 
 from django.contrib import admin
-"""
-Sample administration
-"""
 
 from sample.models import Sample, Part
 
 # custom the model display on the admin site interface
 @admin.register(Sample)
 class SampleAdmin(admin.ModelAdmin):
-    fields = ('name', 'filters', )
+    fields = ('name', )
 
     # display the fields with read only mode
     # readonly_fields = ('pub_date')
@@ -18,21 +16,14 @@ class SampleAdmin(admin.ModelAdmin):
     # save_on_top = True
 
     # the autocompletion will be possible on the following search fields
-    search_fields = ['name', 'filters', ]
+    search_fields = ['name', ]
 
-    list_display = ('id', 'name', 'format_pub_date', )
+    list_display = ('name', 'pub_date', )
 
     # fields editabled
     # list_editable = ('name', )
 
     list_filter = ('name', )
-
-    def format_pub_date(self, sample: Sample):
-        print(type(sample.pub_date))
-        print(sample.pub_date.strftime("%b %d %Y"))
-        return sample.pub_date.strftime("%d %b %Y")
-    format_pub_date.short_description = 'Publication date'
-    format_pub_date.admin_order_field = 'Publication date'
 
 @admin.register(Part)
 class PartAdmin(admin.ModelAdmin):
