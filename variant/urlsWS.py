@@ -6,10 +6,14 @@ app_name = 'variant'
 
 urlpatterns = [
 
-    path('', views_ws.VariantView.as_view(), name='all_variants'),
+    path('',
+         views_ws.VariantView.as_view(),
+         name='all_variants'),
 
     # <SERVER>/ws/variant/filters/splTOTO/
-    path('filters/<str:sample_name>/', views_ws.find_distinct_filters, name='find_dictinct_filters'),
+    path('filters/<str:sample_name>/',
+         views_ws.find_distinct_filters,
+         name='find_dictinct_filters'),
 
 
     # <SERVER>/ws/variant/node_value/splTOTO/annot.changes.HGVS/524G>A/
@@ -21,5 +25,4 @@ urlpatterns = [
     path('frequency/<str:sample_name>/<int:frequency>/<str:comparator>/',
          views_ws.find_variants_with_frequency,
          name='find_variants_with_frequency')
-
 ]
