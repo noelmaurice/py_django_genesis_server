@@ -1,5 +1,8 @@
 
 from django.contrib import admin
+"""
+Sample administration
+"""
 
 from sample.models import Sample, Part
 

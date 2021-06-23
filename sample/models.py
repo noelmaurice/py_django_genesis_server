@@ -3,8 +3,11 @@ from django.db import models
 
 
 class Sample(models.Model):
+    # sample name
     name = models.CharField(max_length=200, help_text='Sample name')
+    # publication date
     pub_date = models.DateTimeField('date published', auto_now_add=True)
+    # filter list of the sample
     filters = ArrayField(models.CharField(max_length=200, help_text='Filters'))
 
     class Meta:
@@ -15,8 +18,13 @@ class Sample(models.Model):
 
 
 class Part(models.Model):
+    # the related sample object
     sample = models.ForeignKey(Sample, on_delete=models.CASCADE, help_text='Sample')
+
+    # part name
     name = models.CharField(max_length=200, help_text='Part name')
+
+    # value for the part
     value = models.CharField(max_length=200, help_text='Part value')
 
     class Meta:
