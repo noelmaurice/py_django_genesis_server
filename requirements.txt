@@ -3,5 +3,4 @@ pymongo
 anacore
 pysam-win
 sphinx
-pydantic
-rest_framework
+djangorestframework
