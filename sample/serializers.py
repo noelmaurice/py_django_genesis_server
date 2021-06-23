@@ -10,12 +10,11 @@ class PartSerializer(serializers.ModelSerializer):
 
 
 class SampleSerializer(serializers.ModelSerializer):
-    part_set = PartSerializer(many=True)
+    values = PartSerializer(many=True, source='part_set')
 
     class Meta:
         model = Sample
-        fields = ('id', 'name', 'part_set')
-
+        fields = ('id', 'name', 'values', 'filters')
 
     # the object and the nested objects are saved
     def create(self, validated_data):
@@ -32,7 +31,7 @@ class SampleSerializer(serializers.ModelSerializer):
             each['sample'] = sample
 
         # the part object serializer is instantiated
-        part_set_serializer = self.fields['part_set']
+        part_set_serializer = self.fields['values']
 
         # the part objects of the part list are saved into database
         parts = part_set_serializer.create(part_validated_data)
