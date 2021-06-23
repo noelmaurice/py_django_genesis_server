@@ -17,8 +17,9 @@ class VariantWebServiceTestClass(ParentTest):
     by the data model_data tests.
     """
 
-    HOST = 'localhost'
-    PORT = 8000
+    # server parameters
+    HOST: str = 'localhost'
+    PORT: int = 8000
 
     @classmethod
     def setUpTestData(cls):

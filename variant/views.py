@@ -9,6 +9,13 @@ from variant.model_data.repository.variantRepository import VariantRepository
 
 
 def index(request):
+    """
+    Parse the VCF variant file, record the found variant into database and display the first objects
+
+    @param request: Request object
+    @return: JSON variant objects
+    """
+
     collect = DataModel.get_collect()
     collect.remove()
 
