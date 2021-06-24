@@ -50,6 +50,7 @@
 
 ![Operation diagram for variant_projet v0.1.0](doc/img/operating_diagram_variant_project_v0.1.0.png)
 
+
 ### Changes
 
 > Not applicable
