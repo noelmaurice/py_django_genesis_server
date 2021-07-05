@@ -3,7 +3,7 @@ Classes and functions for managing a Coord, part of a variant
 """
 import anacore.vcf
 
-from variant.model_data.data.parentData import DataModel
+from variant.model_data.parentData import DataModel
 
 
 class Coord(DataModel):
@@ -11,6 +11,7 @@ class Coord(DataModel):
     The coord part of a variant
     This object can be managed by the database
     """
+
     def __init__(self,
                  alt: str,
                  assembly: str,

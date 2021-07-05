@@ -12,12 +12,11 @@
 > The Pydantic objects in accordance with the FastAPI documentation are not used anymore.
 
 > Therefore, now only one server is used for managing two different applications :
-> 
+>
 >- Web application
 >- Web services
-> 
+>
 > See the **Operating diagram part** above
-
 
 ### Improvements
 
@@ -36,11 +35,9 @@
 
 **CAUTION :** In this version, the sample object are not final.
 
-
 ### Bug fixes
 
 > Not applicable
-
 
 # Release 0.1.0 [2021-06-15]
 
@@ -49,7 +46,6 @@
 ### Operating diagram for variant_project v0.1.0
 
 ![Operation diagram for variant_projet v0.1.0](doc/img/operating_diagram_variant_project_v0.1.0.png)
-
 
 ### Changes
 

@@ -33,7 +33,6 @@ class VariantWebServiceTestClass(ParentTest):
         """
         pass
 
-
     def test_insert_variant(self):
         """
         The web service for the variant insertion into the database is checked
@@ -46,13 +45,12 @@ class VariantWebServiceTestClass(ParentTest):
         data_dict = json.loads(data_str)
 
         request = 'http://{host}:{port}/ws/variant/?test=True'.format(
-                                                host=VariantWebServiceTestClass.HOST,
-                                                port=VariantWebServiceTestClass.PORT)
+            host=VariantWebServiceTestClass.HOST,
+            port=VariantWebServiceTestClass.PORT)
 
         response = requests.post(request, json=data_dict)
 
         self.assertEqual(200, response.status_code)
-
 
     def test_find_variant_distinct_filters(self):
         """
@@ -60,13 +58,12 @@ class VariantWebServiceTestClass(ParentTest):
         """
 
         request = 'http://{host}:{port}/ws/variant/filters/{sample_name}/?test=True'.format(
-                                                host=VariantWebServiceTestClass.HOST,
-                                                port=VariantWebServiceTestClass.PORT,
-                                                sample_name='splTOTO')
+            host=VariantWebServiceTestClass.HOST,
+            port=VariantWebServiceTestClass.PORT,
+            sample_name='splTOTO')
         response = requests.get(request)
 
         self.assertEqual(200, response.status_code)
-
 
     def test_find_variant_frequencies(self):
         """
@@ -74,11 +71,11 @@ class VariantWebServiceTestClass(ParentTest):
         """
 
         request = 'http://{host}:{port}/ws/variant/frequency/{sample_name}/{frequency}/{comparator}/?test=True'.format(
-                                                host=VariantWebServiceTestClass.HOST,
-                                                port=VariantWebServiceTestClass.PORT,
-                                                sample_name='splTOTO',
-                                                frequency=40,
-                                                comparator=ComparatorEnum.GT.value)
+            host=VariantWebServiceTestClass.HOST,
+            port=VariantWebServiceTestClass.PORT,
+            sample_name='splTOTO',
+            frequency=40,
+            comparator=ComparatorEnum.GT.value)
 
         print((ComparatorEnum.GT).value)
         print(request)
@@ -92,13 +89,12 @@ class VariantWebServiceTestClass(ParentTest):
         The web service for finding sample with some value for a specific node is checked
         """
         request = 'http://{host}:{port}/ws/variant/node_value/{sample_name}/{node}/{value}/?test=True'.format(
-                                                host=VariantWebServiceTestClass.HOST,
-                                                port=VariantWebServiceTestClass.PORT,
-                                                sample_name='splTOTO',
-                                                node='annot.changes.HGVSc',
-                                                value='524G>A')
+            host=VariantWebServiceTestClass.HOST,
+            port=VariantWebServiceTestClass.PORT,
+            sample_name='splTOTO',
+            node='annot.changes.HGVSc',
+            value='524G>A')
 
         response = requests.get(request)
 
         self.assertEqual(200, response.status_code)
-

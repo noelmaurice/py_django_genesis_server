@@ -1,1 +1,651 @@
-[{"sample_name": "splTOTO", "annot": [{"conseq": "splice_donor_variant", "changes": {"HGVSc": "NM_000314.8:c.492+1G>A", "HGVSp": "NP_000305.3:p.(=)"}, "pathogenicity": {"CADD_phred": "34", "ClinVar": null, "MetaLR_rankscore": null, "VEST4_rankscore": null}, "subject": {"feature": "NM_000314.8", "feature_type": "Transcript", "symbol": "PTEN"}}, {"conseq": "splice_donor_variant", "changes": {"HGVSc": "NM_001304717.2:c.1012+1G>A", "HGVSp": null}, "pathogenicity": {"CADD_phred": "34", "ClinVar": null, "MetaLR_rankscore": null, "VEST4_rankscore": null}, "subject": {"feature": "NM_001304717.5", "feature_type": "Transcript", "symbol": "PTEN"}}, {"conseq": "splice_donor_variant", "changes": {"HGVSc": "NM_001304718.1:c.-259+1G>A", "HGVSp": "NP_001291647.1:p.(=)"}, "pathogenicity": {"CADD_phred": "34", "ClinVar": null, "MetaLR_rankscore": null, "VEST4_rankscore": null}, "subject": {"feature": "NM_001304718.2", "feature_type": "Transcript", "symbol": "PTEN"}}], "collocated_annot": [], "coord": {"alt": "A", "assembly": "GRCh38", "pos": 87933252, "ref": "G", "region": "10"}, "evidences": {"prec_same_dis": null, "prec_all_dis": null, "imp_same_dis": "", "imp_all_dis": ""}, "pop_AF": [], "supports": [{"filters": ["CSQ","OOT","q10"], "alt_depth": 544, "depth": 904, "frequency": 60.18, "quality": 13589.9, "source": "freebayes"}, {"filters": ["OOT"], "alt_depth": 539, "depth": 918, "frequency": 58.71, "quality": 319.0, "source": "vardict"}, {"filters": ["OOT"], "alt_depth": 522, "depth": 874, "frequency": 59.73, "quality": null, "source": "mutect2"}], "xref": {"HGMD": [], "Unknown": ["CD020869"], "cosmic": ["COSV64301805"], "dbSNP": []}}, {"sample_name": "splTOTO", "annot": [{"conseq": "missense_variant", "changes": {"HGVSc": "NM_000546.5:c.524G>A", "HGVSp": "NP_000537.3:p.(Arg175His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_000546.5", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001126112.2:c.524G>A", "HGVSp": "NP_001119584.1:p.(Arg175His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001126112.2", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001126113.2:c.524G>A", "HGVSp": "NP_001119585.1:p.(Arg175His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001126113.2", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001126114.2:c.524G>A", "HGVSp": "NP_001119586.1:p.(Arg175His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001126114.2", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001126115.1:c.128G>A", "HGVSp": "NP_001119587.1:p.(Arg43His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001126115.1", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001126116.1:c.128G>A", "HGVSp": "NP_001119588.1:p.(Arg43His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001126116.1", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001126117.1:c.128G>A", "HGVSp": "NP_001119589.1:p.(Arg43His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001126117.1", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001126118.1:c.407G>A", "HGVSp": "NP_001119590.1:p.(Arg136His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001126118.1", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001276695.2:c.407G>A", "HGVSp": "NP_001263624.1:p.(Arg136His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001276695.2", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001276696.2:c.407G>A", "HGVSp": "NP_001263625.1:p.(Arg136His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001276696.2", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001276697.2:c.47G>A", "HGVSp": "NP_001263626.1:p.(Arg16His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001276697.2", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001276698.2:c.47G>A", "HGVSp": "NP_001263627.1:p.(Arg16His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001276698.2", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001276699.2:c.47G>A", "HGVSp": "NP_001263628.1:p.(Arg16His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001276699.2", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001276760.2:c.407G>A", "HGVSp": "NP_001263689.1:p.(Arg136His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001276760.2", "feature_type": "Transcript", "symbol": "TP53"}}, {"conseq": "missense_variant", "changes": {"HGVSc": "NM_001276761.2:c.407G>A", "HGVSp": "NP_001263690.1:p.(Arg136His)"}, "pathogenicity": {"CADD_phred": "23.4", "ClinVar": "likely_pathogenic&not_provided&pathogenic", "MetaLR_rankscore": "0.99900", "VEST4_rankscore": "0.94432"}, "subject": {"feature": "NM_001276761.2", "feature_type": "Transcript", "symbol": "TP53"}}], "collocated_annot": [], "coord": {"alt": "T", "assembly": "GRCh38", "pos": 7675088, "ref": "C", "region": "17"}, "evidences": {"prec_same_dis": null, "prec_all_dis": null, "imp_same_dis": "A", "imp_all_dis": "B"}, "pop_AF": [{"AF": "3.98e-06", "name": "Global", "source": "gnomAD"}, {"AF": "0", "name": "AFR", "source": "gnomAD"}, {"AF": "0", "name": "AMR", "source": "gnomAD"}, {"AF": "0", "name": "ASJ", "source": "gnomAD"}, {"AF": "0", "name": "EAS", "source": "gnomAD"}, {"AF": "0", "name": "FIN", "source": "gnomAD"}, {"AF": "8.803e-06", "name": "NFE", "source": "gnomAD"}, {"AF": "0", "name": "OTH", "source": "gnomAD"}, {"AF": "0", "name": "SAS", "source": "gnomAD"}], "supports": [{"filters": ["PASS"], "alt_depth": 3007, "depth": 4445, "frequency": 67.65, "quality": 79502.5, "source": "freebayes"}, {"filters": ["PASS"], "alt_depth": 3005, "depth": 4467, "frequency": 67.27, "quality": 392.0, "source": "vardict"}, {"filters": ["PASS"], "alt_depth": 2989, "depth": 4365, "frequency": 68.48, "quality": null, "source": "mutect2"}], "xref": {"HGMD": ["CM951224", "CM062017"], "Unknown": [], "cosmic": ["COSV52661038"], "dbSNP": ["rs28934578"]}}, {"sample_name": "splTOTO", "annot": [{"conseq": "upstream_gene_variant", "changes": {"HGVSc": "NM_001193376.1:c.-146C>T", "HGVSp": "NP_001180305.1:p.(=)"}, "pathogenicity": {"CADD_phred": "8.684", "ClinVar": null, "MetaLR_rankscore": null, "VEST4_rankscore": null}, "subject": {"feature": "NM_001193376.2", "feature_type": "Transcript", "symbol": "TERT"}}, {"conseq": "upstream_gene_variant", "changes": {"HGVSc": "NM_198253.2:c.-146C>T", "HGVSp": "NP_937983.2:p.(=)"}, "pathogenicity": {"CADD_phred": "8.684", "ClinVar": null, "MetaLR_rankscore": null, "VEST4_rankscore": null}, "subject": {"feature": "NM_198253.3", "feature_type": "Transcript", "symbol": "TERT"}}, {"conseq": "upstream_gene_variant", "changes": {"HGVSc": "NR_149162.1:n.-88C>T", "HGVSp": null}, "pathogenicity": {"CADD_phred": "8.684", "ClinVar": null, "MetaLR_rankscore": null, "VEST4_rankscore": null}, "subject": {"feature": "NR_149162.2", "feature_type": "Transcript", "symbol": "TERT"}}, {"conseq": "upstream_gene_variant", "changes": {"HGVSc": "NR_149163.1:n.-88C>T", "HGVSp": null}, "pathogenicity": {"CADD_phred": "8.684", "ClinVar": null, "MetaLR_rankscore": null, "VEST4_rankscore": null}, "subject": {"feature": "NR_149163.2", "feature_type": "Transcript", "symbol": "TERT"}}, {"conseq": "regulatory_region_variant", "changes": {"HGVSc": null, "HGVSp": null}, "pathogenicity": {"CADD_phred": "8.684", "ClinVar": null, "MetaLR_rankscore": null, "VEST4_rankscore": null}, "subject": {"feature": "ENSR00000746745", "feature_type": "RegulatoryFeature", "symbol": null}}], "collocated_annot": [], "coord": {"alt": "A", "assembly": "GRCh38", "pos": 1295135, "ref": "G", "region": "5"}, "evidences": {"prec_same_dis": null, "prec_all_dis": null, "imp_same_dis": "", "imp_all_dis": ""}, "pop_AF": [], "supports": [{"filters": ["CSQ"], "alt_depth": 600, "depth": 1598, "frequency": 37.55, "quality": 12807.1, "source": "freebayes"}, {"filters": ["CSQ"], "alt_depth": 630, "depth": 1677, "frequency": 37.57, "quality": 316.0, "source": "vardict"}, {"filters": ["CSQ"], "alt_depth": 454, "depth": 1152, "frequency": 39.41, "quality": null, "source": "mutect2"}], "xref": {"HGMD": [], "Unknown": [], "cosmic": [], "dbSNP": ["rs1561215364"]}}]
+[
+  {
+    "sample_name": "splTOTO",
+    "annot": [
+      {
+        "conseq": "splice_donor_variant",
+        "changes": {
+          "HGVSc": "NM_000314.8:c.492+1G>A",
+          "HGVSp": "NP_000305.3:p.(=)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "34",
+          "ClinVar": null,
+          "MetaLR_rankscore": null,
+          "VEST4_rankscore": null
+        },
+        "subject": {
+          "feature": "NM_000314.8",
+          "feature_type": "Transcript",
+          "symbol": "PTEN"
+        }
+      },
+      {
+        "conseq": "splice_donor_variant",
+        "changes": {
+          "HGVSc": "NM_001304717.2:c.1012+1G>A",
+          "HGVSp": null
+        },
+        "pathogenicity": {
+          "CADD_phred": "34",
+          "ClinVar": null,
+          "MetaLR_rankscore": null,
+          "VEST4_rankscore": null
+        },
+        "subject": {
+          "feature": "NM_001304717.5",
+          "feature_type": "Transcript",
+          "symbol": "PTEN"
+        }
+      },
+      {
+        "conseq": "splice_donor_variant",
+        "changes": {
+          "HGVSc": "NM_001304718.1:c.-259+1G>A",
+          "HGVSp": "NP_001291647.1:p.(=)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "34",
+          "ClinVar": null,
+          "MetaLR_rankscore": null,
+          "VEST4_rankscore": null
+        },
+        "subject": {
+          "feature": "NM_001304718.2",
+          "feature_type": "Transcript",
+          "symbol": "PTEN"
+        }
+      }
+    ],
+    "collocated_annot": [],
+    "coord": {
+      "alt": "A",
+      "assembly": "GRCh38",
+      "pos": 87933252,
+      "ref": "G",
+      "region": "10"
+    },
+    "evidences": {
+      "prec_same_dis": null,
+      "prec_all_dis": null,
+      "imp_same_dis": "",
+      "imp_all_dis": ""
+    },
+    "pop_AF": [],
+    "supports": [
+      {
+        "filters": [
+          "CSQ",
+          "OOT",
+          "q10"
+        ],
+        "alt_depth": 544,
+        "depth": 904,
+        "frequency": 60.18,
+        "quality": 13589.9,
+        "source": "freebayes"
+      },
+      {
+        "filters": [
+          "OOT"
+        ],
+        "alt_depth": 539,
+        "depth": 918,
+        "frequency": 58.71,
+        "quality": 319.0,
+        "source": "vardict"
+      },
+      {
+        "filters": [
+          "OOT"
+        ],
+        "alt_depth": 522,
+        "depth": 874,
+        "frequency": 59.73,
+        "quality": null,
+        "source": "mutect2"
+      }
+    ],
+    "xref": {
+      "HGMD": [],
+      "Unknown": [
+        "CD020869"
+      ],
+      "cosmic": [
+        "COSV64301805"
+      ],
+      "dbSNP": []
+    }
+  },
+  {
+    "sample_name": "splTOTO",
+    "annot": [
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_000546.5:c.524G>A",
+          "HGVSp": "NP_000537.3:p.(Arg175His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_000546.5",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001126112.2:c.524G>A",
+          "HGVSp": "NP_001119584.1:p.(Arg175His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001126112.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001126113.2:c.524G>A",
+          "HGVSp": "NP_001119585.1:p.(Arg175His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001126113.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001126114.2:c.524G>A",
+          "HGVSp": "NP_001119586.1:p.(Arg175His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001126114.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001126115.1:c.128G>A",
+          "HGVSp": "NP_001119587.1:p.(Arg43His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001126115.1",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001126116.1:c.128G>A",
+          "HGVSp": "NP_001119588.1:p.(Arg43His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001126116.1",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001126117.1:c.128G>A",
+          "HGVSp": "NP_001119589.1:p.(Arg43His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001126117.1",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001126118.1:c.407G>A",
+          "HGVSp": "NP_001119590.1:p.(Arg136His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001126118.1",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001276695.2:c.407G>A",
+          "HGVSp": "NP_001263624.1:p.(Arg136His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001276695.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001276696.2:c.407G>A",
+          "HGVSp": "NP_001263625.1:p.(Arg136His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001276696.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001276697.2:c.47G>A",
+          "HGVSp": "NP_001263626.1:p.(Arg16His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001276697.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001276698.2:c.47G>A",
+          "HGVSp": "NP_001263627.1:p.(Arg16His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001276698.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001276699.2:c.47G>A",
+          "HGVSp": "NP_001263628.1:p.(Arg16His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001276699.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001276760.2:c.407G>A",
+          "HGVSp": "NP_001263689.1:p.(Arg136His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001276760.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      },
+      {
+        "conseq": "missense_variant",
+        "changes": {
+          "HGVSc": "NM_001276761.2:c.407G>A",
+          "HGVSp": "NP_001263690.1:p.(Arg136His)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "23.4",
+          "ClinVar": "likely_pathogenic&not_provided&pathogenic",
+          "MetaLR_rankscore": "0.99900",
+          "VEST4_rankscore": "0.94432"
+        },
+        "subject": {
+          "feature": "NM_001276761.2",
+          "feature_type": "Transcript",
+          "symbol": "TP53"
+        }
+      }
+    ],
+    "collocated_annot": [],
+    "coord": {
+      "alt": "T",
+      "assembly": "GRCh38",
+      "pos": 7675088,
+      "ref": "C",
+      "region": "17"
+    },
+    "evidences": {
+      "prec_same_dis": null,
+      "prec_all_dis": null,
+      "imp_same_dis": "A",
+      "imp_all_dis": "B"
+    },
+    "pop_AF": [
+      {
+        "AF": "3.98e-06",
+        "name": "Global",
+        "source": "gnomAD"
+      },
+      {
+        "AF": "0",
+        "name": "AFR",
+        "source": "gnomAD"
+      },
+      {
+        "AF": "0",
+        "name": "AMR",
+        "source": "gnomAD"
+      },
+      {
+        "AF": "0",
+        "name": "ASJ",
+        "source": "gnomAD"
+      },
+      {
+        "AF": "0",
+        "name": "EAS",
+        "source": "gnomAD"
+      },
+      {
+        "AF": "0",
+        "name": "FIN",
+        "source": "gnomAD"
+      },
+      {
+        "AF": "8.803e-06",
+        "name": "NFE",
+        "source": "gnomAD"
+      },
+      {
+        "AF": "0",
+        "name": "OTH",
+        "source": "gnomAD"
+      },
+      {
+        "AF": "0",
+        "name": "SAS",
+        "source": "gnomAD"
+      }
+    ],
+    "supports": [
+      {
+        "filters": [
+          "PASS"
+        ],
+        "alt_depth": 3007,
+        "depth": 4445,
+        "frequency": 67.65,
+        "quality": 79502.5,
+        "source": "freebayes"
+      },
+      {
+        "filters": [
+          "PASS"
+        ],
+        "alt_depth": 3005,
+        "depth": 4467,
+        "frequency": 67.27,
+        "quality": 392.0,
+        "source": "vardict"
+      },
+      {
+        "filters": [
+          "PASS"
+        ],
+        "alt_depth": 2989,
+        "depth": 4365,
+        "frequency": 68.48,
+        "quality": null,
+        "source": "mutect2"
+      }
+    ],
+    "xref": {
+      "HGMD": [
+        "CM951224",
+        "CM062017"
+      ],
+      "Unknown": [],
+      "cosmic": [
+        "COSV52661038"
+      ],
+      "dbSNP": [
+        "rs28934578"
+      ]
+    }
+  },
+  {
+    "sample_name": "splTOTO",
+    "annot": [
+      {
+        "conseq": "upstream_gene_variant",
+        "changes": {
+          "HGVSc": "NM_001193376.1:c.-146C>T",
+          "HGVSp": "NP_001180305.1:p.(=)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "8.684",
+          "ClinVar": null,
+          "MetaLR_rankscore": null,
+          "VEST4_rankscore": null
+        },
+        "subject": {
+          "feature": "NM_001193376.2",
+          "feature_type": "Transcript",
+          "symbol": "TERT"
+        }
+      },
+      {
+        "conseq": "upstream_gene_variant",
+        "changes": {
+          "HGVSc": "NM_198253.2:c.-146C>T",
+          "HGVSp": "NP_937983.2:p.(=)"
+        },
+        "pathogenicity": {
+          "CADD_phred": "8.684",
+          "ClinVar": null,
+          "MetaLR_rankscore": null,
+          "VEST4_rankscore": null
+        },
+        "subject": {
+          "feature": "NM_198253.3",
+          "feature_type": "Transcript",
+          "symbol": "TERT"
+        }
+      },
+      {
+        "conseq": "upstream_gene_variant",
+        "changes": {
+          "HGVSc": "NR_149162.1:n.-88C>T",
+          "HGVSp": null
+        },
+        "pathogenicity": {
+          "CADD_phred": "8.684",
+          "ClinVar": null,
+          "MetaLR_rankscore": null,
+          "VEST4_rankscore": null
+        },
+        "subject": {
+          "feature": "NR_149162.2",
+          "feature_type": "Transcript",
+          "symbol": "TERT"
+        }
+      },
+      {
+        "conseq": "upstream_gene_variant",
+        "changes": {
+          "HGVSc": "NR_149163.1:n.-88C>T",
+          "HGVSp": null
+        },
+        "pathogenicity": {
+          "CADD_phred": "8.684",
+          "ClinVar": null,
+          "MetaLR_rankscore": null,
+          "VEST4_rankscore": null
+        },
+        "subject": {
+          "feature": "NR_149163.2",
+          "feature_type": "Transcript",
+          "symbol": "TERT"
+        }
+      },
+      {
+        "conseq": "regulatory_region_variant",
+        "changes": {
+          "HGVSc": null,
+          "HGVSp": null
+        },
+        "pathogenicity": {
+          "CADD_phred": "8.684",
+          "ClinVar": null,
+          "MetaLR_rankscore": null,
+          "VEST4_rankscore": null
+        },
+        "subject": {
+          "feature": "ENSR00000746745",
+          "feature_type": "RegulatoryFeature",
+          "symbol": null
+        }
+      }
+    ],
+    "collocated_annot": [],
+    "coord": {
+      "alt": "A",
+      "assembly": "GRCh38",
+      "pos": 1295135,
+      "ref": "G",
+      "region": "5"
+    },
+    "evidences": {
+      "prec_same_dis": null,
+      "prec_all_dis": null,
+      "imp_same_dis": "",
+      "imp_all_dis": ""
+    },
+    "pop_AF": [],
+    "supports": [
+      {
+        "filters": [
+          "CSQ"
+        ],
+        "alt_depth": 600,
+        "depth": 1598,
+        "frequency": 37.55,
+        "quality": 12807.1,
+        "source": "freebayes"
+      },
+      {
+        "filters": [
+          "CSQ"
+        ],
+        "alt_depth": 630,
+        "depth": 1677,
+        "frequency": 37.57,
+        "quality": 316.0,
+        "source": "vardict"
+      },
+      {
+        "filters": [
+          "CSQ"
+        ],
+        "alt_depth": 454,
+        "depth": 1152,
+        "frequency": 39.41,
+        "quality": null,
+        "source": "mutect2"
+      }
+    ],
+    "xref": {
+      "HGMD": [],
+      "Unknown": [],
+      "cosmic": [],
+      "dbSNP": [
+        "rs1561215364"
+      ]
+    }
+  }
+]

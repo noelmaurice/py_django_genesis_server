@@ -1,11 +1,11 @@
 import time
 
+from anacore.annotVcf import AnnotVCFIO
 from django.http import JsonResponse
 
-from anacore.annotVcf import AnnotVCFIO
-from variant.model_data.data.parentData import DataModel
-from variant.model_data.data.variant import Variant
+from variant.model_data.parentData import DataModel
 from variant.model_data.repository.variantRepository import VariantRepository
+from variant.model_data.variant import Variant
 
 
 def index(request):
@@ -26,7 +26,7 @@ def index(request):
         for record in reader:
             samples = record.samples
             for sample in samples.items():
-                variant = Variant.create(record, sample, assembly ='GRCh38')
+                variant = Variant.create(record, sample, assembly='GRCh38')
                 if variant is not None:
                     VariantRepository.create(variant)
 
@@ -70,7 +70,8 @@ def requests():
 
     # request
     start = time.time()
-    variants = VariantRepository.find_variants_node_value('splTOTO', 'annot.changes.HGVSp', ['ArG175HiS', 'NP_001180305'], True)
+    variants = VariantRepository.find_variants_node_value('splTOTO', 'annot.changes.HGVSp',
+                                                          ['ArG175HiS', 'NP_001180305'], True)
     done = time.time()
     print('\r\nfind_node_with_value -> ', round(done - start, 4))
     for v in variants:

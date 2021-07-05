@@ -6,9 +6,9 @@ import json
 import re
 from typing import Optional, List
 
-from variant.model_data.data.parentData import DataModel
-from variant.model_data.data.variant import Variant
-from variant.model_data.repository.parentRepository import RepositoryModel, ComparatorEnum
+from variant.model_data.parentData import DataModel
+from variant.model_data.repository.parentRepository import RepositoryModel
+from variant.model_data.variant import Variant
 
 
 class VariantRepository(RepositoryModel):
@@ -33,7 +33,6 @@ class VariantRepository(RepositoryModel):
 
         return str(req.inserted_id)
 
-
     @staticmethod
     def find_distinct_filters(sample_name: str,
                               collect: object = DataModel.get_collect()):
@@ -46,12 +45,11 @@ class VariantRepository(RepositoryModel):
         :rtype: [str]
         """
         req = collect.find({
-                'sample_name': sample_name,
-            }
+            'sample_name': sample_name,
+        }
         ).distinct('supports.filters')
 
         return list(req)
-
 
     @staticmethod
     def find_variants_frequency(sample_name: str,
@@ -71,9 +69,9 @@ class VariantRepository(RepositoryModel):
 
         comparator = '$' + comparator
         req = collect.find({
-                'sample_name': sample_name,
-                'supports.frequency': {comparator: frequency}
-            },
+            'sample_name': sample_name,
+            'supports.frequency': {comparator: frequency}
+        },
             {
                 '_id': 0
             }
@@ -108,15 +106,12 @@ class VariantRepository(RepositoryModel):
             regex = re.compile('|'.join(reg))
 
         req = collect.find({
-                'sample_name': sample_name,
-                node: regex
-            },
+            'sample_name': sample_name,
+            node: regex
+        },
             {
                 '_id': 0
             }
         )
 
         return list(req)
-
-
-

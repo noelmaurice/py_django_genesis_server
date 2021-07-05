@@ -1,6 +1,7 @@
 from django.test import TestCase
 from pymongo import MongoClient
 
+
 class ParentTest(TestCase):
     """
     All the test objects managed by the mongodb test database inherit of DataTestModel

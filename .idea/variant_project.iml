@@ -13,15 +13,23 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.8 (test)" jdkType="Python SDK" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/variant_project.egg-info" />
+      <excludeFolder url="file://$MODULE_DIR$/sample.egg-info" />
+    </content>
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-  <component name="PyDocumentationSettings">
-    <option name="format" value="EPYTEXT" />
-    <option name="myDocStringFormat" value="Epytext" />
+    <orderEntry type="module" module-name="variant_project_client" />
+    <orderEntry type="module" module-name="tutorial2" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/variant/_templates" />
+      </list>
+    </option>
   </component>
 </module>
