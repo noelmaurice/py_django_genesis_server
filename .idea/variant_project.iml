@@ -21,7 +21,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="variant_project_client" />
+    <orderEntry type="module" module-name="variant_project_api" />
     <orderEntry type="module" module-name="tutorial2" />
   </component>
   <component name="TemplatesService">

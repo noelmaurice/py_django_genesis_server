@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../rest_framework_tutorial/.idea/tutorial2.iml" filepath="$PROJECT_DIR$/../rest_framework_tutorial/.idea/tutorial2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/variant_project.iml" filepath="$PROJECT_DIR$/.idea/variant_project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../variant_project_client/.idea/variant_project_client.iml" filepath="$PROJECT_DIR$/../variant_project_client/.idea/variant_project_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../variant_project_api/.idea/variant_project_api.iml" filepath="$PROJECT_DIR$/../variant_project_api/.idea/variant_project_api.iml" />
     </modules>
   </component>
 </project>
