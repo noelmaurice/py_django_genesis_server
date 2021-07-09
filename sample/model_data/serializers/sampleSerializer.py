@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from sample.models import Sample, Part
+from sample.model_data.sample import Sample, Part
 
 
 class PartSerializer(serializers.ModelSerializer):
@@ -10,7 +10,6 @@ class PartSerializer(serializers.ModelSerializer):
 
 
 class SampleSerializer(serializers.ModelSerializer):
-
     # the related parts of the sample
     values = PartSerializer(many=True, source='part_set')
 
@@ -20,7 +19,6 @@ class SampleSerializer(serializers.ModelSerializer):
 
     # the object and the nested objects are saved
     def create(self, validated_data):
-
         # the parts are removed of the validated_data and are saved in the part list
         part_validated_data = validated_data.pop('part_set')
 
@@ -40,4 +38,3 @@ class SampleSerializer(serializers.ModelSerializer):
 
         # the sample without parts is returned
         return sample
-

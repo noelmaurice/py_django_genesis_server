@@ -2,8 +2,7 @@
 Classes and functions for managing a popAF, part of a variant
 """
 
-from variant.model_data.data.parentData import DataModel
-
+from variant.model_data.parentData import DataModel
 
 
 class AlleleFrequency(DataModel):
@@ -11,6 +10,7 @@ class AlleleFrequency(DataModel):
     A AF of popAF, part of a variant
     This object can be managed by the database
     """
+
     def __init__(self,
                  AF: float,
                  name: str,

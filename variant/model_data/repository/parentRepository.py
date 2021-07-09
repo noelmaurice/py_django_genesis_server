@@ -1,5 +1,5 @@
-
 from enum import Enum
+
 
 class ComparatorEnum(Enum):
     """
@@ -13,6 +13,7 @@ class ComparatorEnum(Enum):
     LTE = 'lte'
     NE = 'ne'
     NIN = 'nin'
+
 
 class RepositoryModel():
     """

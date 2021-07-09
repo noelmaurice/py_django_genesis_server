@@ -3,8 +3,8 @@ Testing variant data with database
 """
 import json
 
-from variant.model_data.data.variant import Variant
 from variant.model_data.repository.variantRepository import VariantRepository
+from variant.model_data.variant import Variant
 from variant.tests.parentTest import ParentTest
 
 
@@ -12,6 +12,7 @@ class VariantDataTestClass(ParentTest):
     """
     Class for testing variant data with database
     """
+
     @classmethod
     def setUpTestData(cls):
         """
@@ -26,7 +27,6 @@ class VariantDataTestClass(ParentTest):
         data_dict = json.loads(data_json)
         for d in data_dict:
             VariantRepository.create(d, ParentTest.get_test_collect())
-
 
     def setUp(self):
         """
@@ -67,7 +67,7 @@ class VariantDataTestClass(ParentTest):
         The request for finding sample with some value for a specific node is checked
         """
         variants = VariantRepository.find_variants_node_value('splTOTO',
-                                                            'annot.changes.HGVSc', ['524G>A'],
+                                                              'annot.changes.HGVSc', ['524G>A'],
                                                               collect=ParentTest.get_test_collect())
 
         self.assertEqual(1, len(variants))

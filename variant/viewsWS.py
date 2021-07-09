@@ -1,4 +1,8 @@
 """
+TODO if object if saved, return status code '201 Created'
+"""
+
+"""
 Variant web services
 """
 
@@ -6,7 +10,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from variant.model_data.data.parentData import DataModel
+from variant.model_data.parentData import DataModel
 from variant.model_data.repository.variantRepository import VariantRepository
 from variant.tests.parentTest import ParentTest
 
@@ -28,6 +32,7 @@ class VariantView(APIView):
         @param kwargs: kwargs attributes
         @return: The ID saved variant
         """
+
         try:
             if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
                 collect = ParentTest.get_test_collect()
@@ -125,7 +130,6 @@ def find_variants_with_frequency(request,
             collect = ParentTest.get_test_collect()
         else:
             collect = DataModel.get_collect()
-
 
         variants = VariantRepository.find_variants_frequency(sample_name,
                                                              frequency,

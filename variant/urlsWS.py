@@ -15,7 +15,6 @@ urlpatterns = [
          views_ws.find_distinct_filters,
          name='find_dictinct_filters'),
 
-
     # <SERVER>/ws/variant/node_value/splTOTO/annot.changes.HGVS/524G>A/
     path('node_value/<str:sample_name>/<str:node>/<str:value>/',
          views_ws.find_node_contains_value,

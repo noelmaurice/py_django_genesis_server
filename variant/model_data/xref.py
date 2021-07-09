@@ -2,8 +2,7 @@
 Classes and functions for managing a Xref, part of a variant
 """
 
-from variant.model_data.data.parentData import DataModel
-
+from variant.model_data.parentData import DataModel
 
 class Xref(DataModel):
     """
@@ -20,7 +19,6 @@ class Xref(DataModel):
         self.Unknown = Unknown
         self.cosmic = cosmic
         self.dbSNP = dbSNP
-
 
     @classmethod
     def create(cls, info_ann: [str]) -> DataModel:
@@ -63,4 +61,3 @@ class Xref(DataModel):
             raise Exception('Error while Xref creation')
 
         return xref
-

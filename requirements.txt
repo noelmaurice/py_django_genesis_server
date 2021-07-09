@@ -3,4 +3,5 @@ pymongo
 anacore
 pysam-win
 sphinx
+psycopg2
 djangorestframework

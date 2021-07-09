@@ -1,5 +1,5 @@
 """
-:todo check the optional or not values
+TODO check the optional or not values
 """
 
 from pymongo import MongoClient
@@ -21,7 +21,6 @@ class DataModel:
         """
         return cls(**data)
 
-
     @staticmethod
     def get_collect() -> object:
         """
@@ -34,4 +33,3 @@ class DataModel:
         collect = db.variants
 
         return collect
-

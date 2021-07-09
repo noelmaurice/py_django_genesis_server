@@ -2,12 +2,12 @@
 Sample web services
 """
 
-from rest_framework.views import APIView
+from rest_framework import status, generics
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework.views import APIView
 
-from sample.models import Sample
-from sample.serializers import SampleSerializer, PartSerializer
+from sample.model_data.sample import Sample
+from sample.model_data.serializers.sampleSerializer import SampleSerializer
 
 
 class SampleView(APIView):
@@ -35,9 +35,15 @@ class SampleView(APIView):
         @param kwargs: kwargs attributes
         @return: The saved sample
         """
-        serializer = SampleSerializer(data=request.data)
+        data = request.data
+        serializer = SampleSerializer(data=data)
         if serializer.is_valid():
             sample = serializer.save()
             serializer = SampleSerializer(sample)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class SampleDetail(generics.RetrieveAPIView):
+    queryset = Sample.objects.all()
+    serializer_class = SampleSerializer

@@ -2,7 +2,7 @@
 Classes and functions for managing a Evidences, part of a variant
 """
 
-from variant.model_data.data.parentData import DataModel
+from variant.model_data.parentData import DataModel
 
 
 class Evidences(DataModel):
@@ -48,7 +48,6 @@ class Evidences(DataModel):
             raise Exception('Error while Evidences creation')
 
         return evidences
-
 
 # class EvidencesWithSampleName(DataModel):
 #     def __init__(self,

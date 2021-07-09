@@ -4,7 +4,7 @@ Classes and functions for managing a Supports, part of a variant
 
 import anacore.vcf
 
-from variant.model_data.data.parentData import DataModel
+from variant.model_data.parentData import DataModel
 
 
 class Support(DataModel):
@@ -12,6 +12,7 @@ class Support(DataModel):
     The Support for a variant
     This object can be managed by the database
     """
+
     def __init__(self,
                  filters: [str],
                  alt_depth: int,

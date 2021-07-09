@@ -1,19 +1,20 @@
 """
+TODO Check the variable constraints
+"""
+
+"""
 Classes and functions for managing a Variant
 """
 
-"""
-:todo Check the variable constraints
-"""
-
 import anacore.vcf
-from variant.model_data.data.annot import Annot
-from variant.model_data.data.coord import Coord
-from variant.model_data.data.evidences import Evidences
-from variant.model_data.data.parentData import DataModel
-from variant.model_data.data.popAF import AlleleFrequency
-from variant.model_data.data.supports import Support
-from variant.model_data.data.xref import Xref
+
+from variant.model_data.annot import Annot
+from variant.model_data.coord import Coord
+from variant.model_data.evidences import Evidences
+from variant.model_data.parentData import DataModel
+from variant.model_data.popAF import AlleleFrequency
+from variant.model_data.supports import Support
+from variant.model_data.xref import Xref
 
 
 class Variant(DataModel):
