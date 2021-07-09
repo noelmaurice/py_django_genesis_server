@@ -139,3 +139,6 @@ def find_variants_with_frequency(request,
         raise Exception('Error while the web service call')
 
     return Response(variants)
+
+
+
