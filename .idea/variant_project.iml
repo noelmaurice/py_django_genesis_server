@@ -21,8 +21,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="variant_project_api" />
     <orderEntry type="module" module-name="tutorial2" />
+    <orderEntry type="module" module-name="variant_project_api" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
