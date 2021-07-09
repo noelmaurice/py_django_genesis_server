@@ -40,7 +40,11 @@ class SampleView(APIView):
         if serializer.is_valid():
             sample = serializer.save()
             serializer = SampleSerializer(sample)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+            result = {'id': serializer.data['id']}
+
+            return Response(result, status=status.HTTP_201_CREATED)
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
