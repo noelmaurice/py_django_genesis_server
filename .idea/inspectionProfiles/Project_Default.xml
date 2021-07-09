@@ -1,40 +1,25 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="JupyterKernelInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="14">
-            <item index="0" class="java.lang.String" itemvalue="pysam-win" />
-            <item index="1" class="java.lang.String" itemvalue="pydantic" />
-            <item index="2" class="java.lang.String" itemvalue="pymongo" />
-            <item index="3" class="java.lang.String" itemvalue="anacore" />
-            <item index="4" class="java.lang.String" itemvalue="FastAPI" />
-            <item index="5" class="java.lang.String" itemvalue="uvicorn" />
-            <item index="6" class="java.lang.String" itemvalue="chardet" />
-            <item index="7" class="java.lang.String" itemvalue="six" />
-            <item index="8" class="java.lang.String" itemvalue="requests-mock" />
-            <item index="9" class="java.lang.String" itemvalue="certifi" />
-            <item index="10" class="java.lang.String" itemvalue="requests" />
-            <item index="11" class="java.lang.String" itemvalue="urllib3" />
-            <item index="12" class="java.lang.String" itemvalue="idna" />
-            <item index="13" class="java.lang.String" itemvalue="rest_framework" />
+          <list size="5">
+            <item index="0" class="java.lang.String" itemvalue="Django" />
+            <item index="1" class="java.lang.String" itemvalue="pytz" />
+            <item index="2" class="java.lang.String" itemvalue="django-bootstrap4" />
+            <item index="3" class="java.lang.String" itemvalue="dacite" />
+            <item index="4" class="java.lang.String" itemvalue="PyVCF" />
           </list>
         </value>
-      </option>
-    </inspection_tool>
-    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
-      <option name="ignoredErrors">
-        <list>
-          <option value="E302" />
-        </list>
       </option>
     </inspection_tool>
     <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredIdentifiers">
         <list>
-          <option value="object.remove" />
-          <option value="object.insert_one" />
+          <option value="list.values" />
+          <option value="django.core.urlresolvers" />
         </list>
       </option>
     </inspection_tool>
