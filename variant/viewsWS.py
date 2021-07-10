@@ -75,10 +75,10 @@ def find_distinct_filters(request,
 
 
 @api_view(['GET'])
-def find_node_contain_value(request,
-                            sample_name: str,
-                            node: str,
-                            value: str):
+def find_node_value(request,
+                    sample_name: str,
+                    node: str,
+                    value: str):
     """
     Search variants with the value for the variant node
 
