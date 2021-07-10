@@ -83,7 +83,7 @@ variants: [Variant] = VariantAPI.find_frequency("splTOTO", 40, 'gt')
 # print(variants[0].sample_name)
 
 """
-VARIANT CREATE WS FROM VCF
+VARIANT CREATE WS FROM VCF FILE
 """
 reader = AnnotVCFIO('files/variants_filtered.vcf')
 
