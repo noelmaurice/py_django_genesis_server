@@ -1,0 +1,118 @@
+{
+  "sample_name": "splTOTO",
+  "annot": [
+    {
+      "conseq": "splice_donor_variant",
+      "changes": {
+        "HGVSc": "NM_000314.8:c.492+1G>A",
+        "HGVSp": "NP_000305.3:p.(=)"
+      },
+      "pathogenicity": {
+        "CADD_phred": "34",
+        "ClinVar": null,
+        "MetaLR_rankscore": null,
+        "VEST4_rankscore": null
+      },
+      "subject": {
+        "feature": "NM_000314.8",
+        "feature_type": "Transcript",
+        "symbol": "PTEN"
+      }
+    },
+    {
+      "conseq": "splice_donor_variant",
+      "changes": {
+        "HGVSc": "NM_001304717.2:c.1012+1G>A",
+        "HGVSp": null
+      },
+      "pathogenicity": {
+        "CADD_phred": "34",
+        "ClinVar": null,
+        "MetaLR_rankscore": null,
+        "VEST4_rankscore": null
+      },
+      "subject": {
+        "feature": "NM_001304717.5",
+        "feature_type": "Transcript",
+        "symbol": "PTEN"
+      }
+    },
+    {
+      "conseq": "splice_donor_variant",
+      "changes": {
+        "HGVSc": "NM_001304718.1:c.-259+1G>A",
+        "HGVSp": "NP_001291647.1:p.(=)"
+      },
+      "pathogenicity": {
+        "CADD_phred": "34",
+        "ClinVar": null,
+        "MetaLR_rankscore": null,
+        "VEST4_rankscore": null
+      },
+      "subject": {
+        "feature": "NM_001304718.2",
+        "feature_type": "Transcript",
+        "symbol": "PTEN"
+      }
+    }
+  ],
+  "collocated_annot": [],
+  "coord": {
+    "alt": "A",
+    "assembly": "GRCh38",
+    "pos": 87933252,
+    "ref": "G",
+    "region": "10"
+  },
+  "evidences": {
+    "prec_same_dis": null,
+    "prec_all_dis": null,
+    "imp_same_dis": "",
+    "imp_all_dis": ""
+  },
+  "pop_AF": [],
+  "supports": [
+    {
+      "filters": [
+        "CSQ",
+        "OOT",
+        "q10"
+      ],
+      "alt_depth": 544,
+      "depth": 904,
+      "frequency": 60.18,
+      "quality": 13589.9,
+      "source": "freebayes"
+    },
+    {
+      "filters": [
+        "OOT"
+      ],
+      "alt_depth": 539,
+      "depth": 918,
+      "frequency": 58.71,
+      "quality": 319.0,
+      "source": "vardict"
+    },
+    {
+      "filters": [
+        "OOT"
+      ],
+      "alt_depth": 522,
+      "depth": 874,
+      "frequency": 59.73,
+      "quality": null,
+      "source": "mutect2"
+    }
+  ],
+  "xref": {
+    "HGMD": [],
+    "Unknown": [
+      "CD020869"
+    ],
+    "cosmic": [
+      "COSV64301805"
+    ],
+    "dbSNP": []
+  }
+}
