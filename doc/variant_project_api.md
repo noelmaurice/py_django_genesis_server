@@ -24,7 +24,7 @@ from variant.model_data.variant import Variant
 
 from variant_project_api.variantAPI import VariantAPI
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'variant_project_api.settings'
 setup()
 
 
