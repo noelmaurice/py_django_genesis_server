@@ -3,7 +3,7 @@ import json
 import requests
 from variant.model_data.variant import Variant
 
-from variant_project_api.api.parentAPI import ParentAPI
+from variant_project_api.parentAPI import ParentAPI
 
 
 class VariantAPI(ParentAPI):
@@ -38,11 +38,11 @@ class VariantAPI(ParentAPI):
 
         ws_url_node_value = VariantAPI.WS_URL + "node_value/"
 
-        response = requests.get("{WS_URL}{SAMPLE_NAME}/{NODE}/{VALUE}/".format(
-                                                                WS_URL = ws_url_node_value,
-                                                                SAMPLE_NAME = sample_name,
-                                                                NODE = node,
-                                                                VALUE = value))
+        response = requests.get("{ws_url}{sample_name}/{node}/{value}/".format(
+                                                                ws_url = ws_url_node_value,
+                                                                sample_name = sample_name,
+                                                                node = node,
+                                                                value = value))
         variants_json = json.loads(response.text)
 
         variants = [Variant.from_json(variant_json) for variant_json in variants_json]
@@ -54,9 +54,9 @@ class VariantAPI(ParentAPI):
 
         ws_url_filters = VariantAPI.WS_URL + "filters/"
 
-        response = requests.get("{WS_URL}{SAMPLE_NAME}/".format(
-                                                                WS_URL = ws_url_filters,
-                                                                SAMPLE_NAME = sample_name))
+        response = requests.get("{ws_url}{sample_name}/".format(
+                                                                ws_url = ws_url_filters,
+                                                                sample_name = sample_name))
         filters = json.loads(response.text)
 
         return filters
@@ -69,11 +69,11 @@ class VariantAPI(ParentAPI):
 
         ws_url_frequency = VariantAPI.WS_URL + "frequency/"
 
-        response = requests.get("{WS_URL}{SAMPLE_NAME}/{FREQUENCY}/{COMPARATOR}/".format(
-                                                        WS_URL=ws_url_frequency,
-                                                        SAMPLE_NAME=sample_name,
-                                                        FREQUENCY=frequency,
-                                                        COMPARATOR=comparator))
+        response = requests.get("{ws_url}{sample_name}/{frequency}/{comparator}/".format(
+                                                        ws_url=ws_url_frequency,
+                                                        sample_name=sample_name,
+                                                        frequency=frequency,
+                                                        comparator=comparator))
         variants_json = json.loads(response.text)
 
         variants = [Variant.from_json(variant_json) for variant_json in variants_json]

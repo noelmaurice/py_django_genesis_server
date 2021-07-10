@@ -30,7 +30,7 @@ def load_requirements(path):
     return requirements
 
 
-def package_files(directory):
+def get_package_files(directory):
     paths = []
     for (path, directories, filenames) in os.walk(directory):
         for filename in filenames:
@@ -67,10 +67,10 @@ setup(
     license='CeCILL v2.1',
     packages=['variant',
               'sample',
-              'api'],
-    package_data={'variant': package_files('variant'),
-                  'sample': package_files('sample'),
-                  'api': package_files('api')},
+              'variant_project_api'],
+    package_data={'variant': get_package_files('variant'),
+                  'sample': get_package_files('sample'),
+                  'variant_project_api': get_package_files('variant_project_api')},
     include_package_data=True,
     install_requires=load_requirements("requirements.txt"),
     url='https://github.com/noelmaurice-iuct-oncopole/variant_project_server',

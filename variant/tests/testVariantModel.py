@@ -8,7 +8,7 @@ from variant.model_data.variant import Variant
 from variant.tests.parentTest import ParentTest
 
 
-class VariantDataTestClass(ParentTest):
+class VariantModelTestClass(ParentTest):
     """
     Class for testing variant data with database
     """

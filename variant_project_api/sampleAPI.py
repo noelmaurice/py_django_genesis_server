@@ -5,7 +5,7 @@ import requests
 from sample.model_data.sample import Sample
 from sample.model_data.serializers.sampleSerializer import SampleSerializer
 
-from variant_project_api.api.parentAPI import ParentAPI
+from variant_project_api.parentAPI import ParentAPI
 
 
 class SampleAPI(ParentAPI):
