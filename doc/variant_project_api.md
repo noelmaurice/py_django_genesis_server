@@ -2,15 +2,17 @@
 
 ## DO QUERIES TO THE variant_project SERVER
 
->This API allows to do request to the variant_project server.
+>This API allows to do requests to the variant_project server thanks a simple python script and without know the server structure.
 > 
->First to all, the python library must be imported in the python environment with the pip install <library name> command.
-> 
+>First to all, the python library must be imported in the python environment with the **pip install library_name** command.
+>
 >Then, a simple python script is enough to query the variant project server.
 > 
->A implementation example script for doing requests to the server is availlable below:
+>A implementation example script for doing requests to the server is available below.
 
-### SOURCE CODE
+### SOURCE CODE EXAMPLE
+
+**CAUTION: This example does not present all the possibilities of the API**
 
 ```py
 import json

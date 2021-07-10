@@ -8,7 +8,7 @@
 
 ### Operating diagram for variant_project v0.2.0
 
-![Operation diagram for variant_projet v0.2.0](doc/img/operating_diagram_variant_project_v0.2.0.png)
+![Operation diagram for variant_projet v0.3.0](doc/img/operating_diagram_variant_project_v0.3.0.png)
 
 ### Warning
 
@@ -23,6 +23,6 @@ other systems.
 
 > python manage.py test
 
-## Main web service uvicorn script file
+## Import API library and use it in a simple python script file
 
-> mainScriptWS.py
+> See the project documentation
