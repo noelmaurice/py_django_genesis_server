@@ -1,5 +1,5 @@
 """
-TODO if object if saved, return status code '201 Created'
+TODO if object saved, return status code '201 Created' and modified the API program too
 """
 
 """
@@ -75,10 +75,10 @@ def find_distinct_filters(request,
 
 
 @api_view(['GET'])
-def find_node_contains_value(request,
-                             sample_name: str,
-                             node: str,
-                             value: str):
+def find_node_contain_value(request,
+                            sample_name: str,
+                            node: str,
+                            value: str):
     """
     Search variants with the value for the variant node
 
@@ -109,10 +109,10 @@ def find_node_contains_value(request,
 
 
 @api_view(['GET'])
-def find_variants_with_frequency(request,
-                                 sample_name: str,
-                                 frequency: float,
-                                 comparator: str):
+def find_frequency(request,
+                   sample_name: str,
+                   frequency: float,
+                   comparator: str):
     """
     Search the variant in accordance with the frequency value
 

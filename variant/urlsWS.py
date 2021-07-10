@@ -17,11 +17,11 @@ urlpatterns = [
 
     # <SERVER>/ws/variant/node_value/splTOTO/annot.changes.HGVS/524G>A/
     path('node_value/<str:sample_name>/<str:node>/<str:value>/',
-         views_ws.find_node_contains_value,
+         views_ws.find_node_contain_value,
          name='find_node_contains_value'),
 
     # <SERVER>/ws/variant/frequency/splTOTO/40/gt/
     path('frequency/<str:sample_name>/<int:frequency>/<str:comparator>/',
-         views_ws.find_variants_with_frequency,
+         views_ws.find_frequency,
          name='find_variants_with_frequency')
 ]
