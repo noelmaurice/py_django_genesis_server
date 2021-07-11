@@ -40,7 +40,6 @@ def get_package_files(directory):
     return paths
 
 
-
 """
 Generate module : 
 python setup.py bdist_wheel
@@ -65,8 +64,8 @@ setup(
     author='Noël MAURICE - IUCT Oncopole Toulouse',
     author_email='maurice.noel@iuct-oncopole.fr',
     license='CeCILL v2.1',
-    packages=['genesis',],
-    package_data={'genesis': get_package_files('genesis'),},
+    packages=['genesis', ],
+    package_data={'genesis': get_package_files('genesis'), },
     include_package_data=True,
     install_requires=load_requirements("requirements.txt"),
     url='https://github.com/noelmaurice-iuct-oncopole/genesis_server',

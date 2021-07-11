@@ -11,7 +11,7 @@
 ### Improvements
 
 - The API library is implemented
-  
+
 - The documentation is updated
 - The code is refactored
 

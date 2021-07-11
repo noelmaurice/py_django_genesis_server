@@ -48,7 +48,6 @@ class VariantView(APIView):
 
         return Response({'id': id})
 
-
     @staticmethod
     @api_view(['GET'])
     def find_distinct_filters(request,
@@ -73,7 +72,6 @@ class VariantView(APIView):
             raise Exception('Error while the web service call')
 
         return Response({'filters': filters})
-
 
     @staticmethod
     @api_view(['GET'])
@@ -108,7 +106,6 @@ class VariantView(APIView):
             raise Exception('Error while the web service call')
 
         return Response(variants)
-
 
     @staticmethod
     @api_view(['GET'])

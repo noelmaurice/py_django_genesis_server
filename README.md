@@ -5,9 +5,9 @@
 > Manage variant with database and requests.
 >
 > Provide web services for doing request about variants (create variant, find variant samples, and so on)
-> 
+>
 > Provide API library for accessing to genesis server services
-> 
+>
 
 ### Operating diagram for genesis server v0.3.0
 
@@ -29,5 +29,5 @@ other systems.
 ## Import API library and use it in a simple python script file
 
 > See the project documentation
-> 
+>
 > [Import API library and use it in a simple python script file](genesis/doc/api_server.md)

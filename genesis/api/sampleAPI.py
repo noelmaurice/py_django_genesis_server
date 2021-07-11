@@ -2,14 +2,13 @@ import json
 from collections import namedtuple
 
 import requests
+
+from genesis.api.parentAPI import ParentAPI
 from genesis.sample.model_data.sample import Sample
 from genesis.sample.model_data.serializers.sampleSerializer import SampleSerializer
 
-from genesis.api.parentAPI import ParentAPI
-
 
 class SampleAPI(ParentAPI):
-
     WS_URL = ParentAPI.WS_URL + "sample/"
 
     @staticmethod
@@ -35,7 +34,6 @@ class SampleAPI(ParentAPI):
                 # print(object_name.values[0]['name'])
             else:
                 raise Exception
-
 
         except Exception:
             raise Exception('SAMPLE READING ERROR')
@@ -64,12 +62,10 @@ class SampleAPI(ParentAPI):
                 else:
                     raise Exception
 
-
         except Exception:
             raise Exception('ALL SAMPLE READING ERROR')
 
         return samples
-
 
     @staticmethod
     def create(data_json) -> str:
@@ -90,4 +86,3 @@ class SampleAPI(ParentAPI):
             raise Exception('SAMPLE CREATE ERROR')
 
         return json.loads(response.text)
-
