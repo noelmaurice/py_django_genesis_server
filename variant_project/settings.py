@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'variant',
-    'sample'
+    'genesis.variant',
+    'genesis.sample'
 ]
 
 MIDDLEWARE = [
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'variant_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'variant_project',
+        'NAME': 'genesis_project',
         'USER': 'postgres',
         'PASSWORD': 'admin',
     }

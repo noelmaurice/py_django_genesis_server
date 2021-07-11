@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/variant_project.iml" filepath="$PROJECT_DIR$/.idea/variant_project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../variant_project_api/.idea/variant_project_api.iml" filepath="$PROJECT_DIR$/../variant_project_api/.idea/variant_project_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../genesis_api/.idea/genesis_api.iml" filepath="$PROJECT_DIR$/../genesis_api/.idea/genesis_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/genesis_server.iml" filepath="$PROJECT_DIR$/.idea/genesis_server.iml" />
     </modules>
   </component>
 </project>

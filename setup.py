@@ -30,7 +30,7 @@ def load_requirements(path):
     return requirements
 
 
-def package_files(directory):
+def get_package_files(directory):
     paths = []
     for (path, directories, filenames) in os.walk(directory):
         for filename in filenames:
@@ -59,19 +59,17 @@ pip install -e .
 """
 
 setup(
-    name='variant_project',
+    name='genesis',
     version=get_version(),
     description='Parse annotated VCF files, manage variant database and requests, provide web services.',
     author='Noël MAURICE - IUCT Oncopole Toulouse',
     author_email='maurice.noel@iuct-oncopole.fr',
     license='CeCILL v2.1',
-    packages=['variant',
-              'sample'],
-    package_data={'variant': package_files('variant'),
-                   'sample': package_files('sample')},
+    packages=['genesis',],
+    package_data={'genesis': get_package_files('genesis'),},
     include_package_data=True,
     install_requires=load_requirements("requirements.txt"),
-    url='https://github.com/noelmaurice-iuct-oncopole/variant_project',
+    url='https://github.com/noelmaurice-iuct-oncopole/variant_project_server',
     python_requires='>=3.8',
     keywords='biology VCF variant sample filter annotation genome',
     long_description_content_type='text/markdown',

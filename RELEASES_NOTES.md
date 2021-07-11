@@ -1,8 +1,31 @@
+# Release 0.3.0 [2021-07-20]
+
+### Operating diagram for variant_project v0.3.0
+
+![Operation diagram for variant_project v0.3.0](genesis/doc/img/operating_diagram_variant_project_v0.3.0.png)
+
+### Changes
+
+> A server API allows to do requests to the variant_project server thanks a simple python script and without know the server structure.
+
+### Improvements
+
+- The API library is implemented
+  
+- The documentation is updated
+- The code is refactored
+
+**CAUTION :** In this version, the sample object are not final.
+
+### Bug fixes
+
+> Not applicable
+
 # Release 0.2.0 [2021-06-25]
 
 ### Operating diagram for variant_project v0.2.0
 
-![Operation diagram for variant_project v0.2.0](doc/img/operating_diagram_variant_project_v0.2.0.png)
+![Operation diagram for variant_project v0.2.0](genesis/doc/img/operating_diagram_variant_project_v0.2.0.png)
 
 ### Changes
 
@@ -45,7 +68,7 @@
 
 ### Operating diagram for variant_project v0.1.0
 
-![Operation diagram for variant_projet v0.1.0](doc/img/operating_diagram_variant_project_v0.1.0.png)
+![Operation diagram for variant_projet v0.1.0](genesis/doc/img/operating_diagram_variant_project_v0.1.0.png)
 
 ### Changes
 
