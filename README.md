@@ -1,14 +1,17 @@
-# Variant project
+# genesis server
 
 > Parse annotated VCF files and extract variant information.
 >
 > Manage variant with database and requests.
 >
 > Provide web services for doing request about variants (create variant, find variant samples, and so on)
+> 
+> Provide API library for accessing to genesis server services
+> 
 
-### Operating diagram for variant_project v0.3.0
+### Operating diagram for genesis server v0.3.0
 
-![Operation diagram for variant_projet v0.3.0](genesis/doc/img/operating_diagram_variant_project_v0.3.0.png)
+![Operation diagram for genesis server v0.3.0](genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
 
 ### Warning
 
@@ -27,4 +30,4 @@ other systems.
 
 > See the project documentation
 > 
-> [Import API library and use it in a simple python script file](genesis/doc/variant_project_api.md)
+> [Import API library and use it in a simple python script file](genesis/doc/api_server.md)
