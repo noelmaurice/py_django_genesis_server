@@ -4,6 +4,7 @@ Classes and functions for managing a Xref, part of a variant
 
 from genesis.variant.model_data.parentData import DataModel
 
+
 class Xref(DataModel):
     """
     The xref part of a variant
