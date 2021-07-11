@@ -6,7 +6,7 @@
 >
 > Provide web services for doing request about variants (create variant, find variant samples, and so on)
 
-### Operating diagram for variant_project v0.2.0
+### Operating diagram for variant_project v0.3.0
 
 ![Operation diagram for variant_projet v0.3.0](doc/img/operating_diagram_variant_project_v0.3.0.png)
 
