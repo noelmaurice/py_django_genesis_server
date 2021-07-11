@@ -1,6 +1,6 @@
-# variant_project API
+# genesis API
 
-## DO QUERIES TO THE variant_project SERVER
+## DO QUERIES TO THE genesis server
 
 > This API allows to do requests to the variant_project server thanks a simple python script and without know the server structure.
 >
