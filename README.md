@@ -26,3 +26,5 @@ other systems.
 ## Import API library and use it in a simple python script file
 
 > See the project documentation
+> 
+> [Import API library and use it in a simple python script file](doc/variant_project_api.md)
