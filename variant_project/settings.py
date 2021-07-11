@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'variant',
-    'sample'
+    'genesis.variant',
+    'genesis.sample'
 ]
 
 MIDDLEWARE = [

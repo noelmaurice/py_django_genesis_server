@@ -2,7 +2,7 @@
 
 ### Operating diagram for variant_project v0.3.0
 
-![Operation diagram for variant_project v0.3.0](doc/img/operating_diagram_variant_project_v0.3.0.png)
+![Operation diagram for variant_project v0.3.0](genesis/doc/img/operating_diagram_variant_project_v0.3.0.png)
 
 ### Changes
 
@@ -25,7 +25,7 @@
 
 ### Operating diagram for variant_project v0.2.0
 
-![Operation diagram for variant_project v0.2.0](doc/img/operating_diagram_variant_project_v0.2.0.png)
+![Operation diagram for variant_project v0.2.0](genesis/doc/img/operating_diagram_variant_project_v0.2.0.png)
 
 ### Changes
 
@@ -68,7 +68,7 @@
 
 ### Operating diagram for variant_project v0.1.0
 
-![Operation diagram for variant_projet v0.1.0](doc/img/operating_diagram_variant_project_v0.1.0.png)
+![Operation diagram for variant_projet v0.1.0](genesis/doc/img/operating_diagram_variant_project_v0.1.0.png)
 
 ### Changes
 

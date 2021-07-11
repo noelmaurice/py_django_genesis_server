@@ -59,18 +59,14 @@ pip install -e .
 """
 
 setup(
-    name='variant_project',
+    name='genesis',
     version=get_version(),
     description='Parse annotated VCF files, manage variant database and requests, provide web services.',
     author='Noël MAURICE - IUCT Oncopole Toulouse',
     author_email='maurice.noel@iuct-oncopole.fr',
     license='CeCILL v2.1',
-    packages=['variant',
-              'sample',
-              'variant_project_api'],
-    package_data={'variant': get_package_files('variant'),
-                  'sample': get_package_files('sample'),
-                  'variant_project_api': get_package_files('variant_project_api')},
+    packages=['genesis',],
+    package_data={'genesis': get_package_files('genesis'),},
     include_package_data=True,
     install_requires=load_requirements("requirements.txt"),
     url='https://github.com/noelmaurice-iuct-oncopole/variant_project_server',

@@ -8,7 +8,7 @@
 
 ### Operating diagram for variant_project v0.3.0
 
-![Operation diagram for variant_projet v0.3.0](doc/img/operating_diagram_variant_project_v0.3.0.png)
+![Operation diagram for variant_projet v0.3.0](genesis/doc/img/operating_diagram_variant_project_v0.3.0.png)
 
 ### Warning
 
@@ -27,4 +27,4 @@ other systems.
 
 > See the project documentation
 > 
-> [Import API library and use it in a simple python script file](doc/variant_project_api.md)
+> [Import API library and use it in a simple python script file](genesis/doc/variant_project_api.md)
