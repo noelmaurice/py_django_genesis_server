@@ -46,11 +46,11 @@ Generate module :
 python setup.py bdist_wheel
 
 Install module
-pip install dist/variant_project-0.2.0-py3-none-any.whl
-pip install --force-reinstall dist/variant_project-0.2.0-py3-none-any.whl
+pip install dist/genesis-0.2.0-py3-none-any.whl
+pip install --force-reinstall dist/genesis-0.2.0-py3-none-any.whl
 
 Uninstall module
-pip uninstall variant_project
+pip uninstall genesis
 
 
 With the same python environment and therefore on the same system :
@@ -69,7 +69,7 @@ setup(
     package_data={'genesis': get_package_files('genesis'),},
     include_package_data=True,
     install_requires=load_requirements("requirements.txt"),
-    url='https://github.com/noelmaurice-iuct-oncopole/variant_project_server',
+    url='https://github.com/noelmaurice-iuct-oncopole/genesis_server',
     python_requires='>=3.8',
     keywords='biology VCF variant sample filter annotation genome',
     long_description_content_type='text/markdown',

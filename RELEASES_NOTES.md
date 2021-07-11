@@ -1,12 +1,12 @@
 # Release 0.3.0 [2021-07-20]
 
-### Operating diagram for variant_project v0.3.0
+### Operating diagram for genesis server v0.3.0
 
-![Operation diagram for variant_project v0.3.0](genesis/doc/img/operating_diagram_variant_project_v0.3.0.png)
+![Operation diagram for variant server v0.3.0](genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
 
 ### Changes
 
-> A server API allows to do requests to the variant_project server thanks a simple python script and without know the server structure.
+> A server API allows to do requests to the genesis server server thanks a simple python script and without know the server structure.
 
 ### Improvements
 
