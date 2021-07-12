@@ -10,6 +10,7 @@
 
 ### Improvements
 
+- The project name is renamed: **genesis server**
 - The API library is implemented
 
 - The documentation is updated

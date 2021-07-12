@@ -1,8 +1,13 @@
+from datetime import datetime
+
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
+from genesis.sample.model_data.parentData import DataModel
 
-class Sample(models.Model):
+
+class Sample(models.Model, DataModel):
+
     # sample name
     name = models.CharField(max_length=200, help_text='Sample name')
     # publication date
@@ -16,8 +21,23 @@ class Sample(models.Model):
     def __str__(self):
         return self.name + ' (' + str(self.id) + ')'
 
+    @classmethod
+    def from_json(cls, data: dict):
+        sample: Sample = Sample()
+        sample.name = data.get('name')
+        sample.filters = data.get('filters')
 
-class Part(models.Model):
+        values: [Part] = []
+        for p in data.get('values'):
+            part: Part = Part()
+            values.append(part.from_json(p))
+
+        sample.values = values
+
+        return sample
+
+class Part(models.Model, DataModel):
+
     # the related sample object
     sample = models.ForeignKey(Sample, on_delete=models.CASCADE, help_text='Sample')
 
@@ -32,3 +52,13 @@ class Part(models.Model):
 
     def __str__(self):
         return '{} - {}'.format(self.sample.name, self.name)
+
+    @classmethod
+    def from_json(cls, data: dict):
+
+        part: Part = Part()
+        part.name = data.get('name')
+        part.value = data.get('value')
+
+        return part
+

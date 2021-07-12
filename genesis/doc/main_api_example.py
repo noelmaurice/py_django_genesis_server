@@ -1,32 +1,17 @@
-# genesis API
-
-## DO QUERIES TO THE genesis server
-
-> This API allows to do requests to the variant_project server thanks a simple python script and without know the server structure.
->
->First to all, the python library must be imported in the python environment with the **pip install library_name** command.
->
->Then, a simple python script is enough to query the variant project server.
->
->A implementation example script for doing requests to the server is available below.
-
-### SOURCE CODE EXAMPLE
-
-**CAUTION: This example does not present all the possibilities of the API**
-
-```py
 import json
 import os
 from pprint import pprint
-
-from anacore.annotVcf import AnnotVCFIO
 from django import setup
-from genesis.variant.model_data.variant import Variant
-
-from genesis.api.variantAPI import VariantAPI
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'genesis.api.settings'
 setup()
+
+from anacore.annotVcf import AnnotVCFIO
+
+from genesis.sample.model_data.serializers.sampleSerializer import SampleSerializer
+from genesis.variant.model_data.variant import Variant
+
+from genesis.api.variantAPI import VariantAPI
 
 
 from genesis.api.sampleAPI import SampleAPI
@@ -36,7 +21,7 @@ from genesis.sample.model_data.sample import Sample
 SAMPLE READ WS
 """
 print('SAMPLE READ WS')
-sample: Sample = SampleAPI.read(1)
+sample: SampleSerializer = SampleAPI.read(1)
 print(sample.values[1]['name'], '\r\n')
 
 """
@@ -109,4 +94,3 @@ for record in reader:
             variant_id.append(variant_json['id'])
 
     print(*(id for id in variant_id))
-```
