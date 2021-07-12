@@ -23,6 +23,7 @@ SAMPLE READ WS
 print('SAMPLE READ WS')
 test: Sample = SampleAPI.test(1)
 print(test.name)
+print(test.pub_date)
 print(test.filters)
 print(Part(test.values[0]).value)
 print(type(test))

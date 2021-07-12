@@ -25,6 +25,7 @@ class Sample(models.Model, DataModel):
     def from_json(cls, data: dict):
         sample: Sample = Sample()
         sample.name = data.get('name')
+        sample.pub_date = data.get('pub_date')
         sample.filters = data.get('filters')
 
         values: [Part] = []
