@@ -50,7 +50,7 @@ class VariantWebServiceTestClass(ParentTest):
 
         response = requests.post(request, json=data_dict)
 
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(201, response.status_code)
 
     def test_find_variant_distinct_filters(self):
         """

@@ -1,8 +1,4 @@
 """
-TODO if object saved, return status code '201 Created' and modified the API program too
-"""
-
-"""
 Variant web services
 """
 
@@ -46,7 +42,7 @@ class VariantView(APIView):
         except Exception:
             raise Exception('Error while the web service call')
 
-        return Response({'id': id})
+        return Response({'id': id}, status=201)
 
     @staticmethod
     @api_view(['GET'])

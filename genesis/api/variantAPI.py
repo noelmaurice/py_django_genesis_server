@@ -21,7 +21,7 @@ class VariantAPI(ParentAPI):
 
             response = requests.post(VariantAPI.WS_URL, data=data_json, headers=headers)
 
-            if response.status_code != 200:
+            if response.status_code != 201:
                 raise Exception
 
         except Exception:

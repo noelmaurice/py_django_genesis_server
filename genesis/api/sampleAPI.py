@@ -12,7 +12,7 @@ class SampleAPI(ParentAPI):
     WS_URL = ParentAPI.WS_URL + "sample/"
 
     @staticmethod
-    def read(id: int) -> Sample:
+    def read(id: int) -> SampleSerializer:
 
         try:
             response = requests.get(SampleAPI.WS_URL + str(id))
