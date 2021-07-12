@@ -1,0 +1,19 @@
+ {
+        "name": "splTOTO",
+        "values": [
+            {
+                "name": "AD",
+                "value": "10000"
+            },
+            {
+                "name": "ADRX",
+                "value": "ADRECV2013"
+            }
+        ],
+        "filters": [
+            "PASS",
+            "q10",
+            "OOT",
+            "CSQ"
+        ]
+    }
