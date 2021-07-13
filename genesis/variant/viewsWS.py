@@ -1,7 +1,7 @@
 """
 Variant web services
 """
-
+from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -42,7 +42,7 @@ class VariantView(APIView):
         except Exception:
             raise Exception('Error while the web service call')
 
-        return Response({'id': id}, status=201)
+        return Response({'id': id}, status=status.HTTP_201_CREATED)
 
     @staticmethod
     @api_view(['GET'])
