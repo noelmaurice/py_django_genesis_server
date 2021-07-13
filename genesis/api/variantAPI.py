@@ -41,6 +41,7 @@ class VariantAPI(ParentAPI):
             sample_name=sample_name,
             node=node,
             value=value))
+
         variants_json = json.loads(response.text)
 
         variants = [Variant.from_json(variant_json) for variant_json in variants_json]
@@ -55,6 +56,7 @@ class VariantAPI(ParentAPI):
         response = requests.get("{ws_url}{sample_name}/".format(
             ws_url=ws_url_filters,
             sample_name=sample_name))
+
         filters = json.loads(response.text)
 
         return filters
@@ -72,6 +74,7 @@ class VariantAPI(ParentAPI):
             sample_name=sample_name,
             frequency=frequency,
             comparator=comparator))
+
         variants_json = json.loads(response.text)
 
         variants = [Variant.from_json(variant_json) for variant_json in variants_json]
