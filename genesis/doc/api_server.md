@@ -17,27 +17,30 @@
 ```py
 import json
 import os
-from pprint import pprint
 
-from anacore.annotVcf import AnnotVCFIO
 from django import setup
-from genesis.variant.model_data.variant import Variant
-
-from genesis.api.variantAPI import VariantAPI
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'genesis.api.settings'
 setup()
 
+from anacore.annotVcf import AnnotVCFIO
 
+from genesis.variant.model_data.variant import Variant
+from genesis.api.variantAPI import VariantAPI
 from genesis.api.sampleAPI import SampleAPI
-from genesis.sample.model_data.sample import Sample
+from genesis.sample.model_data.sample import Sample, Part
 
 """
 SAMPLE READ WS
 """
 print('SAMPLE READ WS')
 sample: Sample = SampleAPI.read(1)
-print(sample.values[1]['name'], '\r\n')
+print(sample.name)
+print(sample.filters)
+part: Part = sample.values[0]
+print(part.name)
+print(part.value)
+print(type(sample), '\r\n')
 
 """
 SAMPLE CREATE WS
@@ -47,16 +50,21 @@ path_file = 'files/sample.json'
 with open(path_file, 'r') as data_file:
     data_json = data_file.read()
 
-sample_json = SampleAPI.create(data_json)
-print(str(sample_json['id']), '\r\n')
+id_json: str = SampleAPI.create(data_json)
+print(id_json, '\r\n')
 
 """
 SAMPLE READ ALL WS
 """
 print('SAMPLE READ ALL WS')
 samples: [Sample] = SampleAPI.read_all()
-pprint(samples[0])
-print(samples[1].name, '\r\n')
+sample: Sample = samples[0]
+print(sample.name)
+print(sample.filters)
+part: Part = sample.values[0]
+print(part.name)
+print(part.value)
+print(type(sample), '\r\n')
 
 """
 VARIANT CREATE WS
@@ -66,8 +74,8 @@ path_file = 'files/variant.json'
 with open(path_file, 'r') as data_file:
     data_json = data_file.read()
 
-variant_json: str = VariantAPI.create(data_json)
-print(variant_json['id'], '\r\n')
+id_json: str = VariantAPI.create(data_json)
+print(id_json, '\r\n')
 
 """
 VARIANT FIND NODE VALUE
@@ -81,6 +89,7 @@ VARIANT FIND FILTERS
 """
 print('VARIANT FIND FILTERS WS')
 filters_json: str = VariantAPI.find_distinct_filters("splTOTO")
+
 print(filters_json['filters'], '\r\n')
 
 """
@@ -103,10 +112,10 @@ for record in reader:
         variant = Variant.create(record, sample, assembly='GRCh38')
         data_json = json.dumps(variant, default=lambda o: o.__dict__)
 
-        variant_id: [str] = []
+        id_json: [str] = []
         if variant is not None:
             variant_json: str = VariantAPI.create(data_json)
-            variant_id.append(variant_json['id'])
+            id_json.append(variant_json)
 
-    print(*(id for id in variant_id))
+    print(*(id for id in id_json))
 ```
