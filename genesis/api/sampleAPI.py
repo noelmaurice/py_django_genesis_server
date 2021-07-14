@@ -1,6 +1,7 @@
 import json
 
 import requests
+from rest_framework import status
 
 from genesis.api.parentAPI import ParentAPI
 from genesis.sample.model_data.sample import Sample
@@ -61,7 +62,7 @@ class SampleAPI(ParentAPI):
 
             response = requests.post(SampleAPI.WS_URL, data=data_json, headers=headers)
 
-            if response.status_code != 201:
+            if response.status_code != status.HTTP_201_CREATED:
                 raise Exception
 
         except Exception:

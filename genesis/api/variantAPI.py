@@ -1,6 +1,7 @@
 import json
 
 import requests
+from rest_framework import status
 
 from genesis.api.parentAPI import ParentAPI
 from genesis.variant.model_data.variant import Variant
@@ -21,7 +22,7 @@ class VariantAPI(ParentAPI):
 
             response = requests.post(VariantAPI.WS_URL, data=data_json, headers=headers)
 
-            if response.status_code != 201:
+            if response.status_code != status.HTTP_201_CREATED:
                 raise Exception
 
         except Exception:
