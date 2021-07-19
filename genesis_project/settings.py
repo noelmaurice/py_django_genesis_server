@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'genesis_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'genesis_project',
+        'NAME': 'genesis',
         'USER': 'postgres',
         'PASSWORD': 'admin',
     }

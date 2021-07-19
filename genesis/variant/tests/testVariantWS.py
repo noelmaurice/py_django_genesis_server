@@ -4,6 +4,7 @@ Testing variant data with database
 import json
 
 import requests
+from rest_framework import status
 
 from genesis.variant.model_data.repository.parentRepository import ComparatorEnum
 from genesis.variant.tests.parentTest import ParentTest
@@ -50,7 +51,7 @@ class VariantWebServiceTestClass(ParentTest):
 
         response = requests.post(request, json=data_dict)
 
-        self.assertEqual(201, response.status_code)
+        self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
     def test_find_variant_distinct_filters(self):
         """

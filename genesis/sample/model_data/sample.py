@@ -19,7 +19,7 @@ class Sample(models.Model, DataModel):
         return self.name + ' (' + str(self.id) + ')'
 
     @classmethod
-    def from_json(cls, data: dict):
+    def from_json(cls, data: dict) -> DataModel:
         sample: Sample = Sample()
         sample.name = data.get('name')
         sample.pub_date = data.get('pub_date')
@@ -52,7 +52,7 @@ class Part(models.Model, DataModel):
         return '{} - {}'.format(self.sample.name, self.name)
 
     @classmethod
-    def from_json(cls, data: dict):
+    def from_json(cls, data: dict) -> DataModel:
         part: Part = Part()
         part.name = data.get('name')
         part.value = data.get('value')

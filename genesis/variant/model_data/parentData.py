@@ -29,7 +29,7 @@ class DataModel:
         :rtype: object
         """
         client = MongoClient()
-        db = client.genesis_project
-        collect = db.variants
+        db = client.genesis
+        collect = db.variant
 
         return collect
