@@ -6,6 +6,7 @@ urlpatterns = [
     re_path(r'^$', RedirectView.as_view(url='variant/')),
 
     re_path(r'^variant/', include('genesis.variant.urls', namespace='variant')),
+    re_path(r'^analysis/', include('genesis.analysis.urls', namespace='analysis')),
 
     re_path(r'^ws/variant/', include('genesis.variant.urlsWS', namespace='variantWS')),
     re_path(r'^ws/sample/', include('genesis.sample.urlsWS', namespace='sampleWS')),
