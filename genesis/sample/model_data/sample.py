@@ -13,7 +13,7 @@ class Sample(models.Model, DataModel):
     filters = ArrayField(models.CharField(max_length=200, help_text='Filters'))
 
     class Meta:
-        db_table = 'sample'
+        db_table = 'sample_application'
 
     def __str__(self):
         return self.name + ' (' + str(self.id) + ')'
@@ -46,7 +46,7 @@ class Part(models.Model, DataModel):
     value = models.CharField(max_length=200, help_text='Part value')
 
     class Meta:
-        db_table = 'part'
+        db_table = 'part_application'
 
     def __str__(self):
         return '{} - {}'.format(self.sample.name, self.name)
