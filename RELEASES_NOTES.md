@@ -2,7 +2,7 @@
 
 ### Operating diagram for genesis server v0.3.0
 
-![Operation diagram for variant server v0.3.0](genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
+![Operation diagram for genesis server v0.3.0](genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
 
 ### Changes
 
