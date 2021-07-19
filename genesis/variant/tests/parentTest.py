@@ -17,7 +17,7 @@ class ParentTest(TestCase):
         :rtype: object
         """
         client = MongoClient()
-        db = client.variant_vcf
-        collect = db.test_variants
+        db = client.genesis
+        collect = db.test_variant
 
         return collect
