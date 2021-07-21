@@ -84,6 +84,20 @@ DATABASES = {
     }
 }
 
+
+# ONLY FOR CUSTOM TESTS: OTHERWISE, COMMENT THE CODE BLOCK
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'genesis',
+#         'USER': 'root',
+#         'PASSWORD': 'admin',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#     }
+# }
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
