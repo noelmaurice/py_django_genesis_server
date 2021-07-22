@@ -122,11 +122,15 @@ class VariantView(APIView):
 
         try:
 
+
+
+
+
             if ('test' in request.query_params) and (request.query_params['test'] == 'True'):
                 collect = ParentTest.get_test_collect()
             else:
                 collect = DataModel.get_collect()
-
+            variable = 'toto'
             variants = VariantRepository.find_variants_frequency(sample_name,
                                                                  frequency,
                                                                  comparator,

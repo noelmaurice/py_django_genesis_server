@@ -8,7 +8,7 @@ from typing import Optional, List
 
 from genesis.variant.model_data.parentData import DataModel
 from genesis.variant.model_data.repository.parentRepository import RepositoryModel
-from genesis.variant.model_data.variant import Variant
+from genesis.variant.model_data.variantData import Variant
 
 
 class VariantRepository(RepositoryModel):

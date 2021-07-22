@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from genesis.sample.model_data.sample import Sample, Part
+from genesis.sample.model_data.sampleData import Sample, Part
 
 
 class PartSerializer(serializers.ModelSerializer):

@@ -1,3 +1,9 @@
+"""
+Analysis data
+See : https://docs.djangoproject.com/fr/3.2/ref/models/options/
+"""
+
+
 from django.db import models
 
 from genesis.analysis.model_data.parentData import DataModel
@@ -46,7 +52,6 @@ class Run(models.Model):
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField()
     instrument = models.ForeignKey(Instrument, models.DO_NOTHING)
-    samples = models.ManyToManyField(Sample)
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'run'
@@ -72,7 +77,7 @@ class Software(models.Model):
 
 
 class Analysis(models.Model, DataModel):
-    cmd = models.CharField(max_length=5000, blank=True)
+    cmd = models.CharField(max_length=5000)
     end_date = models.DateTimeField(auto_now_add=True)
     software_version = models.CharField(max_length=50)
     start_date = models.DateTimeField()
@@ -88,7 +93,6 @@ class Result(models.Model):
     tag = models.CharField(max_length=100)
     type = models.CharField(max_length=50)
     run = models.ForeignKey(Run, models.DO_NOTHING)
-    samples = models.ManyToManyField(Sample)
     provider_analysis = models.ForeignKey(Analysis, models.DO_NOTHING, name='provider')
 
     class Meta:
@@ -101,3 +105,18 @@ class ResultConsumer(models.Model):
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'result_consumer'
+
+
+class RunSample(models.Model):
+    run = models.ForeignKey(Run, models.DO_NOTHING)
+    sample = models.ForeignKey(Sample, models.DO_NOTHING)
+
+    class Meta:
+        db_table = DataModel.TABLE_PREFIX + 'run_sample'
+
+class SampleResult(models.Model):
+    sample = models.ForeignKey(Sample, models.DO_NOTHING)
+    result = models.ForeignKey(Result, models.DO_NOTHING)
+
+    class Meta:
+        db_table = DataModel.TABLE_PREFIX + 'sample_result'

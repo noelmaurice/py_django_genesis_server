@@ -4,7 +4,7 @@ Testing variant data with database
 import json
 
 from genesis.variant.model_data.repository.variantRepository import VariantRepository
-from genesis.variant.model_data.variant import Variant
+from genesis.variant.model_data.variantData import Variant
 from genesis.variant.tests.parentTest import ParentTest
 
 
