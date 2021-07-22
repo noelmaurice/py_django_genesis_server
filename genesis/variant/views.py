@@ -5,7 +5,7 @@ from django.http import JsonResponse
 
 from genesis.variant.model_data.parentData import DataModel
 from genesis.variant.model_data.repository.variantRepository import VariantRepository
-from genesis.variant.model_data.variant import Variant
+from genesis.variant.model_data.variantData import Variant
 
 
 def index(request):

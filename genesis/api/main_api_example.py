@@ -8,10 +8,10 @@ setup()
 
 from anacore.annotVcf import AnnotVCFIO
 
-from genesis.variant.model_data.variant import Variant
+from genesis.variant.model_data.variantData import Variant
 from genesis.api.variantAPI import VariantAPI
 from genesis.api.sampleAPI import SampleAPI
-from genesis.sample.model_data.sample import Sample, Part
+from genesis.sample.model_data.sampleData import Sample, Part
 
 """
 SAMPLE READ WS

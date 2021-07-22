@@ -4,7 +4,7 @@ import requests
 from rest_framework import status
 
 from genesis.api.parentAPI import ParentAPI
-from genesis.sample.model_data.sample import Sample
+from genesis.sample.model_data.sampleData import Sample
 
 
 class SampleAPI(ParentAPI):

@@ -1,10 +1,10 @@
 from django.contrib import admin
 
 """
-Sample administration
+Sample administration site
 """
 
-from genesis.sample.model_data.sample import Sample, Part
+from genesis.sample.model_data.sampleData import Sample, Part
 
 
 # custom the model display on the admin site interface

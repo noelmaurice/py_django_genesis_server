@@ -6,7 +6,7 @@ from rest_framework import status, generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from genesis.sample.model_data.sample import Sample
+from genesis.sample.model_data.sampleData import Sample
 from genesis.sample.model_data.serializers.sampleSerializer import SampleSerializer
 
 

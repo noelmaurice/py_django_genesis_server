@@ -8,13 +8,13 @@ Classes and functions for managing a Variant
 
 import anacore.vcf
 
-from genesis.variant.model_data.annot import Annot
-from genesis.variant.model_data.coord import Coord
-from genesis.variant.model_data.evidences import Evidences
+from genesis.variant.model_data.annotData import Annot
+from genesis.variant.model_data.coordData import Coord
+from genesis.variant.model_data.evidencesData import Evidences
 from genesis.variant.model_data.parentData import DataModel
-from genesis.variant.model_data.popAF import AlleleFrequency
-from genesis.variant.model_data.supports import Support
-from genesis.variant.model_data.xref import Xref
+from genesis.variant.model_data.popAFData import AlleleFrequency
+from genesis.variant.model_data.supportsData import Support
+from genesis.variant.model_data.xrefData import Xref
 
 
 class Variant(DataModel):
