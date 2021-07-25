@@ -10,10 +10,17 @@ from genesis.analysis.model_data.parentData import DataModel
 
 
 class Sample(models.Model):
-    creation_date = models.DateTimeField(auto_now_add=True)
-    description = models.CharField(max_length=300)
+    # sample name
     name = models.CharField(max_length=100)
-    parent = models.ForeignKey('self', models.DO_NOTHING)
+
+    # date of the sample record
+    creation_date = models.DateTimeField(auto_now_add=True)
+
+    # description of the sample
+    description = models.CharField(max_length=300)
+
+    # id of the sample parent, null otherwise
+    parent = models.ForeignKey('self', models.DO_NOTHING, null=True)
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'sample'
@@ -113,6 +120,7 @@ class RunSample(models.Model):
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'run_sample'
+
 
 class SampleResult(models.Model):
     sample = models.ForeignKey(Sample, models.DO_NOTHING)
