@@ -20,5 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 INSTALLED_APPS = [
     'genesis.variant',
-    'genesis.sample'
+    'genesis.sample',
+    'genesis.analysis'
 ]
