@@ -10,10 +10,17 @@ from genesis.analysis.model_data.parentData import DataModel
 
 
 class Sample(models.Model):
-    creation_date = models.DateTimeField(auto_now_add=True)
-    description = models.CharField(max_length=300)
+    # sample name
     name = models.CharField(max_length=100)
-    parent = models.ForeignKey('self', models.DO_NOTHING)
+
+    # date of the sample record
+    creation_date = models.DateTimeField(null=True)
+
+    # description of the sample
+    description = models.CharField(max_length=300, null=True)
+
+    # id of the sample parent, null otherwise
+    parent = models.ForeignKey('self', models.DO_NOTHING, null=True)
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'sample'
@@ -30,7 +37,7 @@ class SampleTag(models.Model):
 
 
 class Provider(models.Model):
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=300, null=True)
     name = models.CharField(max_length=100)
 
     class Meta:
@@ -38,7 +45,7 @@ class Provider(models.Model):
 
 
 class Instrument(models.Model):
-    acquisition_date = models.DateTimeField(auto_now_add=True)
+    acquisition_date = models.DateTimeField(null=True)
     model = models.CharField(max_length=50)
     provider_sn = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
@@ -49,8 +56,8 @@ class Instrument(models.Model):
 
 
 class Run(models.Model):
-    start_date = models.DateTimeField(auto_now_add=True)
-    end_date = models.DateTimeField()
+    start_date = models.DateTimeField(null=True)
+    end_date = models.DateTimeField(null=True)
     instrument = models.ForeignKey(Instrument, models.DO_NOTHING)
 
     class Meta:
@@ -69,7 +76,7 @@ class RunTag(models.Model):
 
 class Software(models.Model):
     category = models.CharField(max_length=50)
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=300, null=True)
     name = models.CharField(max_length=100)
 
     class Meta:
@@ -77,10 +84,10 @@ class Software(models.Model):
 
 
 class Analysis(models.Model, DataModel):
-    cmd = models.CharField(max_length=5000)
-    end_date = models.DateTimeField(auto_now_add=True)
-    software_version = models.CharField(max_length=50)
-    start_date = models.DateTimeField()
+    cmd = models.TextField(null=True)
+    end_date = models.DateTimeField(null=True)
+    software_version = models.CharField(max_length=50, null=True)
+    start_date = models.DateTimeField(null=True)
     software = models.ForeignKey(Software, models.DO_NOTHING)
 
     class Meta:
@@ -90,10 +97,10 @@ class Analysis(models.Model, DataModel):
 class Result(models.Model):
     category = models.CharField(max_length=50)
     path = models.CharField(max_length=300)
-    tag = models.CharField(max_length=100)
+    tag = models.CharField(max_length=100, null=True)
     type = models.CharField(max_length=50)
     run = models.ForeignKey(Run, models.DO_NOTHING)
-    provider_analysis = models.ForeignKey(Analysis, models.DO_NOTHING, name='provider')
+    provider_analysis = models.ForeignKey(Analysis, models.DO_NOTHING, name='provider', null=True)
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'result'
@@ -101,7 +108,7 @@ class Result(models.Model):
 
 class ResultConsumer(models.Model):
     result = models.ForeignKey(Result, models.DO_NOTHING)
-    consumer_analyzes = models.ForeignKey(Analysis, models.DO_NOTHING, name='consumer')
+    consumer_analyzes = models.ForeignKey(Analysis, models.DO_NOTHING, name='consumer', null=True)
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'result_consumer'
@@ -113,6 +120,7 @@ class RunSample(models.Model):
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'run_sample'
+
 
 class SampleResult(models.Model):
     sample = models.ForeignKey(Sample, models.DO_NOTHING)
