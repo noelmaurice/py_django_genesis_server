@@ -9,4 +9,7 @@ urlpatterns = [
     # sample record
     path('sample/', views_ws.SampleView.as_view(), name='post_sample'),
 
+    # sample tag record
+    path('sample_tag/', views_ws.SampleTagView.as_view(), name='post_sample_tag'),
+
 ]
