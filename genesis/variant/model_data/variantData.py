@@ -1,8 +1,4 @@
 """
-TODO Check the variable constraints
-"""
-
-"""
 Classes and functions for managing a Variant
 """
 

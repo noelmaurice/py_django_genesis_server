@@ -5,11 +5,12 @@ See : https://docs.djangoproject.com/fr/3.2/ref/models/options/
 
 
 from django.db import models
+from rest_framework import serializers
 
 from genesis.analysis.model_data.parentData import DataModel
 
 
-class Sample(models.Model):
+class Sample(models.Model, DataModel):
     # sample name
     name = models.CharField(max_length=100)
 
@@ -26,7 +27,7 @@ class Sample(models.Model):
         db_table = DataModel.TABLE_PREFIX + 'sample'
 
 
-class SampleTag(models.Model):
+class SampleTag(models.Model, DataModel):
     key = models.CharField(max_length=50)
     value = models.CharField(max_length=250)
     type = models.CharField(max_length=10)
@@ -36,7 +37,7 @@ class SampleTag(models.Model):
         db_table = DataModel.TABLE_PREFIX + 'sample_tag'
 
 
-class Provider(models.Model):
+class Provider(models.Model, DataModel):
     description = models.CharField(max_length=300, null=True)
     name = models.CharField(max_length=100)
 
@@ -44,7 +45,7 @@ class Provider(models.Model):
         db_table = DataModel.TABLE_PREFIX + 'provider'
 
 
-class Instrument(models.Model):
+class Instrument(models.Model, DataModel):
     acquisition_date = models.DateTimeField(null=True)
     model = models.CharField(max_length=50)
     provider_sn = models.CharField(max_length=50)
@@ -55,7 +56,7 @@ class Instrument(models.Model):
         db_table = DataModel.TABLE_PREFIX + 'instrument'
 
 
-class Run(models.Model):
+class Run(models.Model, DataModel):
     start_date = models.DateTimeField(null=True)
     end_date = models.DateTimeField(null=True)
     instrument = models.ForeignKey(Instrument, models.DO_NOTHING)
@@ -64,7 +65,7 @@ class Run(models.Model):
         db_table = DataModel.TABLE_PREFIX + 'run'
 
 
-class RunTag(models.Model):
+class RunTag(models.Model, DataModel):
     key = models.CharField(max_length=50)
     value = models.CharField(max_length=250)
     type = models.CharField(max_length=10)
@@ -74,7 +75,7 @@ class RunTag(models.Model):
         db_table = DataModel.TABLE_PREFIX + 'run_tag'
 
 
-class Software(models.Model):
+class Software(models.Model, DataModel):
     category = models.CharField(max_length=50)
     description = models.CharField(max_length=300, null=True)
     name = models.CharField(max_length=100)
@@ -94,7 +95,7 @@ class Analysis(models.Model, DataModel):
         db_table = DataModel.TABLE_PREFIX + 'analysis'
 
 
-class Result(models.Model):
+class Result(models.Model, DataModel):
     category = models.CharField(max_length=50)
     path = models.CharField(max_length=300)
     tag = models.CharField(max_length=100, null=True)
@@ -106,7 +107,7 @@ class Result(models.Model):
         db_table = DataModel.TABLE_PREFIX + 'result'
 
 
-class ResultConsumer(models.Model):
+class ResultConsumer(models.Model, DataModel):
     result = models.ForeignKey(Result, models.DO_NOTHING)
     consumer_analyzes = models.ForeignKey(Analysis, models.DO_NOTHING, name='consumer', null=True)
 
@@ -114,7 +115,7 @@ class ResultConsumer(models.Model):
         db_table = DataModel.TABLE_PREFIX + 'result_consumer'
 
 
-class RunSample(models.Model):
+class RunSample(models.Model, DataModel):
     run = models.ForeignKey(Run, models.DO_NOTHING)
     sample = models.ForeignKey(Sample, models.DO_NOTHING)
 
@@ -122,9 +123,12 @@ class RunSample(models.Model):
         db_table = DataModel.TABLE_PREFIX + 'run_sample'
 
 
-class SampleResult(models.Model):
+class SampleResult(models.Model, DataModel):
     sample = models.ForeignKey(Sample, models.DO_NOTHING)
     result = models.ForeignKey(Result, models.DO_NOTHING)
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'sample_result'
+
+
+

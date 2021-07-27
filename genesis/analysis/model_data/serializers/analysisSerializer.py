@@ -1,11 +1,21 @@
+from typing import TypeVar, Generic
+
 from rest_framework import serializers
 
-from genesis.analysis.model_data.analysisData import Sample
+from genesis.analysis.model_data.analysisData import Sample, SampleTag
 
 
 class SampleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Sample
-        fields = ('id', 'name', 'creation_date', 'description', 'parent')
+        fields = '__all__'
+
+
+class SampleTagSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = SampleTag
+        fields = '__all__'
+
 

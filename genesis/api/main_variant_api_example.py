@@ -10,44 +10,7 @@ from anacore.annotVcf import AnnotVCFIO
 
 from genesis.variant.model_data.variantData import Variant
 from genesis.api.variantAPI import VariantAPI
-from genesis.api.sampleAPI import SampleAPI
-from genesis.sample.model_data.sampleData import Sample, Part
 
-"""
-SAMPLE READ WS
-"""
-print('SAMPLE READ WS')
-sample: Sample = SampleAPI.read(1)
-print(sample.name)
-print(sample.filters)
-part: Part = sample.values[0]
-print(part.name)
-print(part.value)
-print(type(sample), '\r\n')
-
-"""
-SAMPLE CREATE WS
-"""
-print('SAMPLE CREATE WS')
-path_file = 'files/sample.json'
-with open(path_file, 'r') as data_file:
-    data_json = data_file.read()
-
-id_json: str = SampleAPI.create(data_json)
-print(id_json, '\r\n')
-
-"""
-SAMPLE READ ALL WS
-"""
-print('SAMPLE READ ALL WS')
-samples: [Sample] = SampleAPI.read_all()
-sample: Sample = samples[0]
-print(sample.name)
-print(sample.filters)
-part: Part = sample.values[0]
-print(part.name)
-print(part.value)
-print(type(sample), '\r\n')
 
 """
 VARIANT CREATE WS
