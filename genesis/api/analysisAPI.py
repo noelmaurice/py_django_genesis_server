@@ -22,10 +22,7 @@ class SampleAnalysisAPI(ParentAPI):
 
             response = requests.post(SampleAnalysisAPI.WS_URL, data=data_json, headers=headers)
 
-            if response.status_code != status.HTTP_201_CREATED:
-                raise Exception
-
-        except Exception:
-            raise Exception('SAMPLE CREATE ERROR')
+        except Exception as e:
+            raise Exception('SAMPLE CREATE ERROR', e.__str__())
 
         return json.loads(response.text)
