@@ -16,16 +16,13 @@ class SampleAPI(ParentAPI):
         try:
             response = requests.get(SampleAPI.WS_URL + str(id))
 
-            if response.status_code != 200:
-                raise Exception
-
             data_json = response.text
             data_dict = json.loads(data_json)
 
             sample = Sample.from_json(data_dict)
 
-        except Exception:
-            raise Exception('SAMPLE READING ERROR')
+        except Exception as e:
+            raise Exception('SAMPLE READING ERROR', e.__str__())
 
         return sample
 
@@ -45,8 +42,8 @@ class SampleAPI(ParentAPI):
                 sample = Sample.from_json(sample_json)
                 samples.append(sample)
 
-        except Exception:
-            raise Exception('ALL SAMPLE READING ERROR')
+        except Exception as e:
+            raise Exception('ALL SAMPLE READING ERROR', e.__str__())
 
         return samples
 
@@ -62,10 +59,7 @@ class SampleAPI(ParentAPI):
 
             response = requests.post(SampleAPI.WS_URL, data=data_json, headers=headers)
 
-            if response.status_code != status.HTTP_201_CREATED:
-                raise Exception
-
-        except Exception:
-            raise Exception('SAMPLE CREATE ERROR')
+        except Exception as e:
+            raise Exception('SAMPLE CREATE ERROR', e.__str__())
 
         return json.loads(response.text)
