@@ -1,7 +1,3 @@
-"""
-TODO check the optional or not values
-"""
-
 from pymongo import MongoClient
 
 

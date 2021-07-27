@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'genesis.analysis',
-    'genesis.variant',
-    'genesis.sample',
+    'genesis.variant'
 ]
 
 MIDDLEWARE = [
