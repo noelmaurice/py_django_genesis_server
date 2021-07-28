@@ -2,15 +2,22 @@
 Analysis web services
 """
 
-from rest_framework import generics
+from rest_framework import generics, mixins
 
 from genesis.analysis.model_data.analysisData import *
 
 
-class SampleDetail(generics.CreateAPIView):
+class SampleDetail(mixins.CreateModelMixin,
+                    mixins.UpdateModelMixin,
+                    generics.GenericAPIView):
     queryset = Sample.objects.all()
     serializer_class = Sample.get_serializer()
 
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
 
 class SampleTagDetail(generics.CreateAPIView):
     queryset = SampleTag.objects.all()
@@ -37,9 +44,17 @@ class RunTagDetail(generics.CreateAPIView):
     serializer_class = RunTag.get_serializer()
 
 
-class ResultDetail(generics.CreateAPIView):
+class ResultDetail(mixins.CreateModelMixin,
+                    mixins.UpdateModelMixin,
+                    generics.GenericAPIView):
     queryset = Result.objects.all()
     serializer_class = Result.get_serializer()
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
 
 
 class SoftwareDetail(generics.CreateAPIView):
@@ -65,5 +80,3 @@ class SampleResultDetail(generics.CreateAPIView):
 class RunSampleDetail(generics.CreateAPIView):
     queryset = RunSample.objects.all()
     serializer_class = RunSample.get_serializer()
-
-

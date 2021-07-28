@@ -28,23 +28,44 @@ class VariantWebServiceTestClass(ParentTest):
         """
         pass
 
-    def test_insert_sample_status_201(self):
+    def test_create_sample_status_201(self):
         """
         The web service for the sample insertion into the database is checked
         """
-        data_json = """{
-                "name": "splTOTO",
-                "creation_date": "2021-07-26 00:00:00",
-                "description": "Example of sample"
-            }"""
+        data_json = """
+                    {
+                        "name": "splTOTO",
+                        "creation_date": "2021-07-26 00:00:00",
+                        "description": "Example of sample"
+                    }
+                    """
 
         url = 'http://{host}:{port}/ws/analysis/sample/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
-    def test_insert_sample_tag_status_201(self):
+    def test_update_sample_status_200(self):
+        """
+        The web service for the result data insertion into the database is checked
+        """
+        data_json = """
+                    {
+                        "name": "splTOTO",
+                        "creation_date": "2021-07-26 00:00:00",
+                        "description": "Example of sample",
+                        "parent": 1
+                    }
+                    """
+
+        url = 'http://{host}:{port}/ws/analysis/sample/2/'
+
+        response = ParentTest.requestWS(url, data_json, method='put')
+
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+    def test_create_sample_tag_status_201(self):
         """
         The web service for the sample_tag data insertion into the database is checked
         """
@@ -57,12 +78,12 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/sample_tag/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 
-    def test_insert_run_status_201(self):
+    def test_create_run_status_201(self):
         """
         The web service for the run data insertion into the database is checked
         """
@@ -76,12 +97,12 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/run/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 
-    def test_insert_software_status_201(self):
+    def test_create_software_status_201(self):
         """
         The web service for the software data insertion into the database is checked
         """
@@ -95,12 +116,12 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/software/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 
-    def test_insert_analysis_status_201(self):
+    def test_create_analysis_status_201(self):
         """
         The web service for the analysis data insertion into the database is checked
         """
@@ -116,12 +137,12 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/analysis/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 
-    def test_insert_provider_status_201(self):
+    def test_create_provider_status_201(self):
         """
         The web service for the provider data insertion into the database is checked
         """
@@ -134,12 +155,12 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/provider/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 
-    def test_insert_instrument_status_201(self):
+    def test_create_instrument_status_201(self):
         """
         The web service for the instrument data insertion into the database is checked
         """
@@ -154,12 +175,12 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/instrument/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 
-    def test_insert_result_status_201(self):
+    def test_create_result_status_201(self):
         """
         The web service for the result data insertion into the database is checked
         """
@@ -174,12 +195,32 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/result/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 
-    def test_insert_run_tag_status_201(self):
+    def test_update_result_status_200(self):
+        """
+        The web service for the result data insertion into the database is checked
+        """
+        data_json = """
+                    {
+                        "category": "raw_reads",
+                        "path": "21T019303_S1_L001_R1_001.fastq.gz",
+                        "type": "fastq",
+                        "run": 18
+                    }
+                    """
+
+        url = 'http://{host}:{port}/ws/analysis/result/11/'
+
+        response = ParentTest.requestWS(url, data_json, method='put')
+
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+
+    def test_create_run_tag_status_201(self):
         """
         The web service for the run_tag data insertion into the database is checked
         """
@@ -194,11 +235,11 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/run_tag/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
-    def test_insert_result_consumer_status_201(self):
+    def test_create_result_consumer_status_201(self):
         """
         The web service for the result_consumer data insertion into the database is checked
         """
@@ -211,12 +252,12 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/result_consumer/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 
-    def test_insert_run_sample_status_201(self):
+    def test_create_run_sample_status_201(self):
         """
         The web service for the run_sample data insertion into the database is checked
         """
@@ -229,12 +270,12 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/run_sample/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
 
-    def test_insert_sample_result_status_201(self):
+    def test_create_sample_result_status_201(self):
         """
         The web service for the sample_result data insertion into the database is checked
         """
@@ -247,6 +288,6 @@ class VariantWebServiceTestClass(ParentTest):
 
         url = 'http://{host}:{port}/ws/analysis/sample_result/'
 
-        response = ParentTest.postWS(url, data_json)
+        response = ParentTest.requestWS(url, data_json)
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
