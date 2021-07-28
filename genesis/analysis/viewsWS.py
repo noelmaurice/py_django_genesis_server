@@ -1,67 +1,82 @@
 """
-Sample web services
+Analysis web services
 """
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.views import APIView
 
-from genesis.analysis.model_data.serializers.analysisSerializer import SampleSerializer, SampleTagSerializer
+from rest_framework import generics, mixins
 
-
-class SampleView(APIView):
-    """
-    Requests on the samples
-    """
-
-    def post(self, request, *args, **kwargs):
-        """
-        Save the sample and return its id
-
-        @param request: Request object with sample to record
-        @param args: args attributes
-        @param kwargs: kwargs attributes
-        @return: The id of the sample saved
-        """
-        data = request.data
-        serializer = SampleSerializer(data=data)
-        if serializer.is_valid():
-            sample = serializer.save()
-            serializer = SampleSerializer(sample)
-
-            result = {'id': serializer.data['id']}
-
-            return Response(result, status=status.HTTP_201_CREATED)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+from genesis.analysis.model_data.analysisData import *
 
 
-class SampleTagView(APIView):
-    """
-    Requests on the samples
-    """
+class SampleDetail(mixins.CreateModelMixin,
+                    mixins.UpdateModelMixin,
+                    generics.GenericAPIView):
+    queryset = Sample.objects.all()
+    serializer_class = Sample.get_serializer()
 
     def post(self, request, *args, **kwargs):
-        """
-        Save the sample and return its id
+        return self.create(request, *args, **kwargs)
 
-        @param request: Request object with sample tag to record
-        @param args: args attributes
-        @param kwargs: kwargs attributes
-        @return: The id of the sample tag saved
-        """
-        data = request.data
-        serializer = SampleTagSerializer(data=data)
-        if serializer.is_valid():
-            sampleTag = serializer.save()
-            serializer = SampleTagSerializer(sampleTag)
-            print(type(serializer))
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
 
-            result = {'id': serializer.data['id']}
-
-            return Response(result, status=status.HTTP_201_CREATED)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class SampleTagDetail(generics.CreateAPIView):
+    queryset = SampleTag.objects.all()
+    serializer_class = SampleTag.get_serializer()
 
 
+class ProviderDetail(generics.CreateAPIView):
+    queryset = Provider.objects.all()
+    serializer_class = Provider.get_serializer()
 
 
+class InstrumentDetail(generics.CreateAPIView):
+    queryset = Instrument.objects.all()
+    serializer_class = Instrument.get_serializer()
+
+
+class RunDetail(generics.CreateAPIView):
+    queryset = Run.objects.all()
+    serializer_class = Run.get_serializer()
+
+
+class RunTagDetail(generics.CreateAPIView):
+    queryset = RunTag.objects.all()
+    serializer_class = RunTag.get_serializer()
+
+
+class ResultDetail(mixins.CreateModelMixin,
+                    mixins.UpdateModelMixin,
+                    generics.GenericAPIView):
+    queryset = Result.objects.all()
+    serializer_class = Result.get_serializer()
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+
+class SoftwareDetail(generics.CreateAPIView):
+    queryset = Software.objects.all()
+    serializer_class = Software.get_serializer()
+
+
+class AnalysisDetail(generics.CreateAPIView):
+    queryset = Analysis.objects.all()
+    serializer_class = Analysis.get_serializer()
+
+
+class ResultConsumerDetail(generics.CreateAPIView):
+    queryset = ResultConsumer.objects.all()
+    serializer_class = ResultConsumer.get_serializer()
+
+
+class SampleResultDetail(generics.CreateAPIView):
+    queryset = SampleResult.objects.all()
+    serializer_class = SampleResult.get_serializer()
+
+
+class RunSampleDetail(generics.CreateAPIView):
+    queryset = RunSample.objects.all()
+    serializer_class = RunSample.get_serializer()

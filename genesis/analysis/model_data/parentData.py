@@ -1,4 +1,3 @@
-
 from rest_framework import serializers
 
 
@@ -17,5 +16,6 @@ class DataModel:
         class DataSerializer(serializers.ModelSerializer):
             class Meta:
                 model = cls
+                fields = '__all__'
 
         return DataSerializer
