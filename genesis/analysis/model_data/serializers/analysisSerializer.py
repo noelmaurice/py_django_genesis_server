@@ -1,7 +1,21 @@
+from typing import TypeVar, Generic
 
-"""
-The specific serializers can be defined below.
+from rest_framework import serializers
 
-The DataModel class implements a generic serializer used in the most cases.
-"""
+from genesis.analysis.model_data.analysisData import Sample, SampleTag
+
+
+class SampleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Sample
+        fields = '__all__'
+
+
+class SampleTagSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = SampleTag
+        fields = '__all__'
+
 

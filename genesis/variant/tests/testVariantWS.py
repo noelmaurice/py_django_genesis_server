@@ -34,7 +34,7 @@ class VariantWebServiceTestClass(ParentTest):
         """
         pass
 
-    def test_create_variant(self):
+    def test_insert_variant(self):
         """
         The web service for the variant insertion into the database is checked
         """
