@@ -1,5 +1,8 @@
-from rest_framework import serializers
+"""
+@TODO Init the database data with a python script
+"""
 
+from rest_framework import serializers
 
 class DataModel:
     """
