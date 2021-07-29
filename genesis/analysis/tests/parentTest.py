@@ -16,7 +16,7 @@ class ParentTest(TestCase):
     PORT: int = 8000
 
     @staticmethod
-    def requestWS(url: str, data_json: str, method: str= 'post') -> Response:
+    def requestWS(url: str, data_json: str = '{}', method: str= 'post') -> Response:
         """
         The post web service
         :param url: web service url

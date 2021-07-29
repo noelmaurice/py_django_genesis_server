@@ -5,7 +5,6 @@ See : https://docs.djangoproject.com/fr/3.2/ref/models/options/
 
 
 from django.db import models
-from rest_framework import serializers
 
 from genesis.analysis.model_data.parentData import DataModel
 
@@ -25,7 +24,6 @@ class Sample(models.Model, DataModel):
 
     class Meta:
         db_table = DataModel.TABLE_PREFIX + 'sample'
-
 
 class SampleTag(models.Model, DataModel):
     key = models.CharField(max_length=50)

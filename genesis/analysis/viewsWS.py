@@ -1,23 +1,48 @@
 """
 Analysis web services
 """
+import json
+from pprint import pprint
 
-from rest_framework import generics, mixins
+from django.http import Http404
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from genesis.analysis.model_data.serializers.analysisSerializer import SampleSerializer
+from rest_framework import generics, mixins, status
 
 from genesis.analysis.model_data.analysisData import *
 
 
-class SampleDetail(mixins.CreateModelMixin,
-                    mixins.UpdateModelMixin,
-                    generics.GenericAPIView):
-    queryset = Sample.objects.all()
-    serializer_class = Sample.get_serializer()
+class SampleDetail(APIView):
+    """
+    Create or update a sample.
+    """
+    def post(self, request):
+        serializer = SampleSerializer(data=request.data)
 
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
+        if serializer.is_valid():
 
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
+            serializer.save()
+            return Response(serializer.data, status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def put(self, request, pk, parent_id):
+        sample = Sample.objects.get(pk=pk)
+        parent = Sample.objects.get(pk=parent_id)
+
+        if parent.id != sample.id:
+            sample.parent = parent
+            sample.save()
+
+        else:
+            raise Exception('THE SAMPLE CAN NOT HAVE THIS PARENT SAMPLE')
+
+        data_json = SampleSerializer(sample)
+
+        return Response(data_json.data, status.HTTP_200_OK)
+
 
 class SampleTagDetail(generics.CreateAPIView):
     queryset = SampleTag.objects.all()
@@ -45,8 +70,8 @@ class RunTagDetail(generics.CreateAPIView):
 
 
 class ResultDetail(mixins.CreateModelMixin,
-                    mixins.UpdateModelMixin,
-                    generics.GenericAPIView):
+                   mixins.UpdateModelMixin,
+                   generics.GenericAPIView):
     queryset = Result.objects.all()
     serializer_class = Result.get_serializer()
 
