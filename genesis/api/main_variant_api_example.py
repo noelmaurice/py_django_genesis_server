@@ -13,14 +13,14 @@ from genesis.api.variantAPI import VariantAPI
 
 
 """
-VARIANT CREATE WS
+VARIANT CREATING WS
 """
-print('VARIANT CREATE WS')
+print('VARIANT CREATING WS')
 path_file = 'files/variant.json'
 with open(path_file, 'r') as data_file:
     data_json = data_file.read()
 
-id_json: str = VariantAPI.create(data_json)
+id_json: str = VariantAPI.createWS(data_json)
 print(id_json, '\r\n')
 
 """
@@ -46,7 +46,7 @@ variants: [Variant] = VariantAPI.find_frequency("splTOTO", 40, 'gt')
 print(variants[0].sample_name, '\r\n')
 
 """
-VARIANT CREATE WS FROM VCF FILE
+VARIANT CREATING WS FROM VCF FILE
 """
 print('VARIANT CREATE FROM VCF FILE WS')
 reader = AnnotVCFIO('files/variants_filtered.vcf')
@@ -60,7 +60,7 @@ for record in reader:
 
         id_json: [str] = []
         if variant is not None:
-            variant_json: str = VariantAPI.create(data_json)
+            variant_json: str = VariantAPI.createWS(data_json)
             id_json.append(variant_json)
 
     print(*(id for id in id_json))

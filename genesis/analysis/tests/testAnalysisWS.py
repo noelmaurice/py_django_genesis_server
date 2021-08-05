@@ -1,7 +1,6 @@
 """
 @TODO The web services must be called in test mode
-
-@TODO The database data must be initialed before tests
+@TODO The test database data must be initialed before tests
 """
 
 """
@@ -48,18 +47,44 @@ class VariantWebServiceTestClass(ParentTest):
 
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
 
-    def test_update_sample_parent_status_200(self):
+    def test_update_sample_parent_status_200_400(self):
         """
         The web service for the sample update into the database is checked
         """
 
-        url = 'http://{host}:{port}/ws/analysis/sample/2/parent/1/'
-        response = ParentTest.requestWS(url, method='put')
+        url = 'http://{host}:{port}/ws/analysis/sample/2/parent/'
+
+        data_json = """
+            {
+                "parent": 1
+            }
+            """
+
+        response = ParentTest.requestWS(url, data_json, method='put')
+
         self.assertEqual(status.HTTP_200_OK, response.status_code)
 
-        url = 'http://{host}:{port}/ws/analysis/sample/1/parent/1/'
-        response = ParentTest.requestWS(url, method='put')
-        self.assertNotEqual(status.HTTP_200_OK, response.status_code)
+        url = 'http://{host}:{port}/ws/analysis/sample/-1/parent/'
+
+        data_json = """
+            {
+                "parent": 2
+            }
+            """
+        response = ParentTest.requestWS(url, data_json, method='put')
+
+        self.assertNotEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
+
+        url = 'http://{host}:{port}/ws/analysis/sample/1/parent/'
+
+        data_json = """
+                    {
+                        "parent": 2
+                    }
+                    """
+        response = ParentTest.requestWS(url, data_json, method='put')
+
+        self.assertNotEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
 
     def test_create_sample_tag_status_201(self):
         """
