@@ -1,10 +1,7 @@
 """
 Analysis web services
 """
-import json
-from pprint import pprint
 
-from django.http import Http404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -28,16 +25,18 @@ class SampleDetail(APIView):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def put(self, request, pk, parent_id):
-        sample = Sample.objects.get(pk=pk)
-        parent = Sample.objects.get(pk=parent_id)
+    def put(self, request, pk):
+        try:
+            sample = Sample.objects.get(pk=pk)
+            parent = Sample.objects.get(pk=request.data['parent'])
+        except:
+            return Response({"detail": "The sample does not exist."}, status.HTTP_400_BAD_REQUEST)
 
         if parent.id != sample.id:
             sample.parent = parent
             sample.save()
-
         else:
-            raise Exception('THE SAMPLE CAN NOT HAVE THIS PARENT SAMPLE')
+            return Response({"detail": "A sample can not be its own parent."}, status.HTTP_400_BAD_REQUEST)
 
         data_json = SampleSerializer(sample)
 

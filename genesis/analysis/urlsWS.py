@@ -10,7 +10,7 @@ urlpatterns = [
     path('sample/', views_ws.SampleDetail.as_view(), name='post_sample'),
 
     # put : the parent of the sample is modified
-    path('sample/<int:pk>/parent/<int:parent_id>/', views_ws.SampleDetail.as_view(), name='put_sample_parent'),
+    path('sample/<int:pk>/parent/', views_ws.SampleDetail.as_view(), name='put_sample_parent'),
 
     # post
     path('sample_tag/', views_ws.SampleTagDetail.as_view(), name='post_sample_tag'),
