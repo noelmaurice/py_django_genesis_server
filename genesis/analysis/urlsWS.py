@@ -6,6 +6,9 @@ app_name = 'analysis'
 
 urlpatterns = [
 
+    # get all
+    path('sample/', views_ws.SampleList.as_view(), name='get_all_sample'),
+
     # post
     path('sample/', views_ws.SampleDetail.as_view(), name='post_sample'),
 
@@ -21,11 +24,23 @@ urlpatterns = [
     # post
     path('instrument/', views_ws.InstrumentDetail.as_view(), name='post_instrument'),
 
+    # get
+    path('run/<int:pk>/', views_ws.RunDetail.as_view(), name='get_run'),
+
+    # get all
+    path('run/', views_ws.RunList.as_view(), name='get_all_run'),
+
     # post
     path('run/', views_ws.RunDetail.as_view(), name='post_run'),
 
     #post
     path('run_tag/', views_ws.RunTagDetail.as_view(), name='post_run_tag'),
+
+    # get
+    path('result/<int:pk>/', views_ws.ResultDetail.as_view(), name='get_result'),
+
+    # get all
+    path('result/', views_ws.ResultList.as_view(), name='get_all_result'),
 
     # post
     path('result/', views_ws.ResultDetail.as_view(), name='post_result'),
@@ -35,6 +50,12 @@ urlpatterns = [
 
     # post
     path('software/', views_ws.SoftwareDetail.as_view(), name='post_software'),
+
+    # get
+    path('analysis/<int:pk>/', views_ws.AnalysisDetail.as_view(), name='get_analysis'),
+
+    # get all
+    path('analysis/', views_ws.AnalysisList.as_view(), name='get_all_analysis'),
 
     # post
     path('analysis/', views_ws.AnalysisDetail.as_view(), name='post_analysis'),

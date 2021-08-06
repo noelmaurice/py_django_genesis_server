@@ -1,17 +1,39 @@
 """
 Analysis web services
 """
-
+from rest_framework.generics import ListCreateAPIView, CreateAPIView, GenericAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from genesis.analysis.model_data.serializers.analysisSerializer import SampleSerializer
-from rest_framework import generics, mixins, status
+from rest_framework import mixins, status
 
 from genesis.analysis.model_data.analysisData import *
 
 
-class SampleDetail(APIView):
+class SampleList(ListCreateAPIView):
+    queryset = Sample.objects.all()
+    serializer_class = SampleSerializer
+
+
+class RunList(ListCreateAPIView):
+    queryset = Run.objects.all()
+    serializer_class = Run.get_serializer()
+
+
+class ResultList(ListCreateAPIView):
+    queryset = Result.objects.all()
+    serializer_class = Result.get_serializer()
+
+
+class AnalysisList(ListCreateAPIView):
+    queryset = Analysis.objects.all()
+    serializer_class = Analysis.get_serializer()
+
+
+
+class SampleDetail(APIView,
+                   mixins.RetrieveModelMixin):
     """
     Create or update a sample.
     """
@@ -43,34 +65,34 @@ class SampleDetail(APIView):
         return Response(data_json.data, status.HTTP_200_OK)
 
 
-class SampleTagDetail(generics.CreateAPIView):
+class SampleTagDetail(CreateAPIView):
     queryset = SampleTag.objects.all()
     serializer_class = SampleTag.get_serializer()
 
 
-class ProviderDetail(generics.CreateAPIView):
+class ProviderDetail(CreateAPIView):
     queryset = Provider.objects.all()
     serializer_class = Provider.get_serializer()
 
 
-class InstrumentDetail(generics.CreateAPIView):
+class InstrumentDetail(CreateAPIView):
     queryset = Instrument.objects.all()
     serializer_class = Instrument.get_serializer()
 
 
-class RunDetail(generics.CreateAPIView):
+class RunDetail(RetrieveUpdateDestroyAPIView):
     queryset = Run.objects.all()
     serializer_class = Run.get_serializer()
 
 
-class RunTagDetail(generics.CreateAPIView):
+class RunTagDetail(CreateAPIView):
     queryset = RunTag.objects.all()
     serializer_class = RunTag.get_serializer()
 
 
 class ResultDetail(mixins.CreateModelMixin,
                    mixins.UpdateModelMixin,
-                   generics.GenericAPIView):
+                   GenericAPIView):
     queryset = Result.objects.all()
     serializer_class = Result.get_serializer()
 
@@ -81,26 +103,26 @@ class ResultDetail(mixins.CreateModelMixin,
         return self.update(request, *args, **kwargs)
 
 
-class SoftwareDetail(generics.CreateAPIView):
+class SoftwareDetail(CreateAPIView):
     queryset = Software.objects.all()
     serializer_class = Software.get_serializer()
 
 
-class AnalysisDetail(generics.CreateAPIView):
+class AnalysisDetail(RetrieveUpdateDestroyAPIView):
     queryset = Analysis.objects.all()
     serializer_class = Analysis.get_serializer()
 
 
-class ResultConsumerDetail(generics.CreateAPIView):
+class ResultConsumerDetail(CreateAPIView):
     queryset = ResultConsumer.objects.all()
     serializer_class = ResultConsumer.get_serializer()
 
 
-class SampleResultDetail(generics.CreateAPIView):
+class SampleResultDetail(CreateAPIView):
     queryset = SampleResult.objects.all()
     serializer_class = SampleResult.get_serializer()
 
 
-class RunSampleDetail(generics.CreateAPIView):
+class RunSampleDetail(CreateAPIView):
     queryset = RunSample.objects.all()
     serializer_class = RunSample.get_serializer()
