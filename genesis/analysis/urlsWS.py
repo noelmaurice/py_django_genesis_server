@@ -6,6 +6,9 @@ app_name = 'analysis'
 
 urlpatterns = [
 
+    # get
+    path('sample/<int:pk>/', views_ws.SampleDetail.as_view(), name='get_sample'),
+
     # get all
     path('sample/', views_ws.SampleList.as_view(), name='get_all_sample'),
 

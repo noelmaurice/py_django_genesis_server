@@ -29,6 +29,64 @@ class VariantWebServiceTestClass(ParentTest):
         """
         pass
 
+    def test_read_sample_result_status_200(self):
+
+        # get sample test
+        url = 'http://{host}:{port}/ws/analysis/sample/1/'
+        response = ParentTest.requestWS(url, method='get')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+    def test_read_all_sample_result_status_200(self):
+
+        # get all sample test
+        url = 'http://{host}:{port}/ws/analysis/sample/'
+        response = ParentTest.requestWS(url, method='get')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+    def test_read_result_result_status_200(self):
+
+        # get result test
+        url = 'http://{host}:{port}/ws/analysis/result/1/'
+        response = ParentTest.requestWS(url, method='get')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+    def test_read_all_result_result_status_200(self):
+
+        # get all result test
+        url = 'http://{host}:{port}/ws/analysis/result/'
+        response = ParentTest.requestWS(url, method='get')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+
+    def test_read_run_result_status_200(self):
+
+        # get run test
+        url = 'http://{host}:{port}/ws/analysis/run/1/'
+        response = ParentTest.requestWS(url, method='get')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+    def test_read_all_run_result_status_200(self):
+
+        # get all run test
+        url = 'http://{host}:{port}/ws/analysis/run/'
+        response = ParentTest.requestWS(url, method='get')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+
+    def test_read_analysis_result_status_200(self):
+
+        # get analysis test
+        url = 'http://{host}:{port}/ws/analysis/analysis/1/'
+        response = ParentTest.requestWS(url, method='get')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+    def test_read_all_analysis_result_status_200(self):
+        # get all analysis test
+        url = 'http://{host}:{port}/ws/analysis/analysis/1/'
+        response = ParentTest.requestWS(url, method='get')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+
     def test_create_sample_status_201(self):
         """
         The web service for the sample insertion into the database is checked
@@ -210,7 +268,7 @@ class VariantWebServiceTestClass(ParentTest):
         data_json = """
             {
                 "category": "raw_reads",
-                "path": "/home/fescudie/share/data/raw/210529_M70265_0465_000000000-JHLN6/Data/Intensities/BaseCalls/21T019303_S1_L001_R1_001.fastq.gz",
+                "path": "/home/toto/share/data/raw/210529_M70265_0465_000000000-JHLN6/Data/Intensities/BaseCalls/21T019303_S1_L001_R1_001.fastq.gz",
                 "type": "fastq",
                 "run": 18
             }

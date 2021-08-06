@@ -31,12 +31,13 @@ class AnalysisList(ListCreateAPIView):
     serializer_class = Analysis.get_serializer()
 
 
-
-class SampleDetail(APIView,
-                   mixins.RetrieveModelMixin):
+class SampleDetail(RetrieveUpdateDestroyAPIView):
     """
     Create or update a sample.
     """
+    queryset = Sample.objects.all()
+    serializer_class = SampleSerializer
+
     def post(self, request):
         serializer = SampleSerializer(data=request.data)
 
@@ -92,9 +93,13 @@ class RunTagDetail(CreateAPIView):
 
 class ResultDetail(mixins.CreateModelMixin,
                    mixins.UpdateModelMixin,
+                   mixins.RetrieveModelMixin,
                    GenericAPIView):
     queryset = Result.objects.all()
     serializer_class = Result.get_serializer()
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)

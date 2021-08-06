@@ -29,6 +29,8 @@ class ParentTest(TestCase):
                     host = ParentTest.HOST,
                     port = ParentTest.PORT)
 
+        if method == 'get':
+            return requests.get(request)
         if method == 'post':
             return requests.post(request, json=data_dict)
         if method == 'put':

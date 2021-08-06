@@ -201,3 +201,68 @@ data_dict = {
 
 id_json: str = ResultAPI.updateResultWS(1, data_dict)
 print(id_json, '\r\n')
+
+
+"""
+SAMPLE READING WS
+"""
+print('SAMPLE READING WS')
+
+data_json: str = SampleAPI.readWS(1)
+print(data_json, '\r\n')
+
+"""
+RUN READING WS
+"""
+print('RUN READING WS')
+
+data_json: str = RunAPI.readWS(1)
+print(data_json, '\r\n')
+
+"""
+RESULT READING WS
+"""
+print('RESULT READING WS')
+
+data_json: str = ResultAPI.readWS(1)
+print(data_json, '\r\n')
+
+"""
+ANALYSIS READING WS
+"""
+print('ANALYSIS READING WS')
+
+data_json: str = AnalysisAPI.readWS(1)
+print(data_json, '\r\n')
+
+"""
+SAMPLE ALL READING WS
+"""
+print('SAMPLE ALL READING WS')
+
+data_json: str = SampleAPI.readWS()
+print(data_json, '\r\n')
+
+"""
+RUN ALL READING WS
+"""
+print('RUN ALL READING WS')
+
+data_json: str = RunAPI.readWS()
+print(data_json, '\r\n')
+
+"""
+RESULT ALL READING WS
+"""
+print('RESULT ALL READING WS')
+
+data_json: str = ResultAPI.readWS()
+print(data_json, '\r\n')
+
+"""
+ANALYSIS ALL READING WS
+"""
+print('ANALYSIS ALL READING WS')
+
+data_json: str = AnalysisAPI.readWS()
+print(data_json, '\r\n')
