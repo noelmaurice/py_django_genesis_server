@@ -294,7 +294,7 @@ class VariantWebServiceTestClass(ParentTest):
             }
             """
 
-        url = 'http://{host}:{port}/ws/analysis/result/11/'
+        url = 'http://{host}:{port}/ws/analysis/result/1/'
 
         response = ParentTest.requestWS(url, data_json, method='put')
 
