@@ -1,17 +1,17 @@
 # genesis server
 
-> Parse annotated VCF files and extract variant information.
+> Parse annotated VCF files and extract variant and sample information.
 >
-> Manage variant with database and requests.
+> Manage variant and analysis with database and requests.
 >
-> Provide web services for doing request about variants (create variant, find variant samples, and so on)
+> Provide web services for doing request about variants and analyzes (manage, find, filter).
 >
-> Provide API library for accessing to genesis server services
+> Provide API library for accessing to genesis server web services.
 >
 
-### Operating diagram for genesis server v0.3.0
+### Operating diagram for genesis server v0.3.0 and forward
 
-![Operation diagram for genesis server v0.3.0](genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
+![Operation diagram for genesis server v0.3.0 and forward](genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
 
 ### Warning
 
