@@ -9,78 +9,18 @@
 
 - The analyse data are now managed, the data relational model is available below :
 
-![Data relational model of analyse data](genesis/doc/data/genesis_relational_data.jpg)
+![Data relational model of analyse data](./genesis/doc/data/genesis_relational_data.jpg)
 
 - The sample demo data are deleted.
-- Main web services are now available, the following list presents them :
+- Main web services are now available, the following lists present them :
 
-```py
-    # get
-    path('sample/<int:pk>/', views_ws.SampleDetail.as_view(), name='get_run'),
+**Variant web services**
 
-    # get all
-    path('sample/', views_ws.SampleList.as_view(), name='get_all_sample'),
+[Variant web services](./genesis/doc/web%20services/variant%20web%20services.pdf)
 
-    # post
-    path('sample/', views_ws.SampleDetail.as_view(), name='post_sample'),
+**Analysis web services**
 
-    # put : the parent of the sample is modified
-    path('sample/<int:pk>/parent/', views_ws.SampleDetail.as_view(), name='put_sample_parent'),
-
-    # post
-    path('sample_tag/', views_ws.SampleTagDetail.as_view(), name='post_sample_tag'),
-
-    # post
-    path('provider/', views_ws.ProviderDetail.as_view(), name='post_provider'),
-
-    # post
-    path('instrument/', views_ws.InstrumentDetail.as_view(), name='post_instrument'),
-
-    # get
-    path('run/<int:pk>/', views_ws.RunDetail.as_view(), name='get_run'),
-
-    # get all
-    path('run/', views_ws.RunList.as_view(), name='get_all_run'),
-
-    # post
-    path('run/', views_ws.RunDetail.as_view(), name='post_run'),
-
-    #post
-    path('run_tag/', views_ws.RunTagDetail.as_view(), name='post_run_tag'),
-
-    # get
-    path('result/<int:pk>/', views_ws.ResultDetail.as_view(), name='get_result'),
-
-    # get all
-    path('result/', views_ws.ResultList.as_view(), name='get_all_result'),
-
-    # post
-    path('result/', views_ws.ResultDetail.as_view(), name='post_result'),
-
-    # put
-    path('result/<int:pk>/', views_ws.ResultDetail.as_view(), name='put_result'),
-
-    # post
-    path('software/', views_ws.SoftwareDetail.as_view(), name='post_software'),
-
-    # get
-    path('analysis/<int:pk>/', views_ws.AnalysisDetail.as_view(), name='get_analysis'),
-
-    # get all
-    path('analysis/', views_ws.AnalysisList.as_view(), name='get_all_analysis'),
-
-    # post
-    path('analysis/', views_ws.AnalysisDetail.as_view(), name='post_analysis'),
-
-    # post
-    path('result_consumer/', views_ws.ResultConsumerDetail.as_view(), name='post_result_consumer'),
-
-    # post
-    path('sample_result/', views_ws.SampleResultDetail.as_view(), name='post_sample_result'),
-
-    # post
-    path('run_sample/', views_ws.RunSampleDetail.as_view(), name='post_run_sample'),
-```
+[Analysis web services](./genesis/doc/web%20services/analysis%20web%20services.pdf)
 
 - The API library is updated.
 
@@ -96,7 +36,7 @@
 
 ### Operating diagram for genesis server v0.3.0
 
-![Operation diagram for genesis server v0.3.0](genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
+![Operation diagram for genesis server v0.3.0](./genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
 
 ### Changes
 
@@ -120,7 +60,7 @@
 
 ### Operating diagram for variant_project v0.2.0
 
-![Operation diagram for variant_project v0.2.0](genesis/doc/img/operating_diagram_variant_project_v0.2.0.png)
+![Operation diagram for variant_project v0.2.0](./genesis/doc/img/operating_diagram_variant_project_v0.2.0.png)
 
 ### Changes
 
@@ -163,7 +103,7 @@
 
 ### Operating diagram for variant_project v0.1.0
 
-![Operation diagram for variant_projet v0.1.0](genesis/doc/img/operating_diagram_variant_project_v0.1.0.png)
+![Operation diagram for variant_projet v0.1.0](./genesis/doc/img/operating_diagram_variant_project_v0.1.0.png)
 
 ### Changes
 

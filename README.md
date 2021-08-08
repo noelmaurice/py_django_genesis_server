@@ -11,7 +11,7 @@
 
 ### Operating diagram for genesis server v0.3.0 and forward
 
-![Operation diagram for genesis server v0.3.0 and forward](genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
+![Operation diagram for genesis server v0.3.0 and forward](./genesis/doc/img/operating_diagram_genesis_server_v0.3.0.png)
 
 ### Warning
 
@@ -30,4 +30,4 @@ other systems.
 
 > See the project documentation
 >
-> [Import API library and use it in a simple python script file](genesis/doc/api_server.md)
+> [Import API library and use it in a simple python script file](./genesis/doc/api_server.md)
