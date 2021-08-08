@@ -4,9 +4,11 @@
 
 > This API allows to do requests to the variant_project server thanks a simple python script and without know the server structure.
 >
->First to all, the python library must be imported in the python environment with the **pip install library_name** command.
+>First to all, the python library must be build with the **setup.py** file.
+> 
+>In a second time, the library and be imported in the python environment with the **pip install library_name** command.
 >
->Then, a simple python script is enough to query the variant project server.
+>Then, a simple python script is enough to query the analysis server project.
 >
 >A implementation example script for doing requests to the server is available below.
 
