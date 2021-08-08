@@ -14,11 +14,11 @@
 - The sample demo data are deleted.
 - Main web services are now available, the following lists present them :
 
-**Variant web services**
+**PDF documentation : Variant web services**
 
 [Variant web services](./genesis/doc/web%20services/variant%20web%20services.pdf)
 
-**Analysis web services**
+**PDF documentation : Analysis web services**
 
 [Analysis web services](./genesis/doc/web%20services/analysis%20web%20services.pdf)
 
